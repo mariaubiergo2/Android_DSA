@@ -31,7 +31,7 @@
         android:layout_width="309dp"
         android:layout_height="48dp"
         android:layout_marginTop="76dp"
-        android:hint="hey"
+        android:hint="password"
         app:layout_constraintBottom_toTopOf="@+id/doLoginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +41,7 @@
         android:id="@+id/mailTxt"
         android:layout_width="309dp"
         android:layout_height="45dp"
+        android:hint="username"
         app:layout_constraintEnd_toEndOf="@+id/passwordTxt"
         app:layout_constraintStart_toStartOf="@+id/passwordTxt"
         app:layout_constraintTop_toBottomOf="@+id/textview_second">

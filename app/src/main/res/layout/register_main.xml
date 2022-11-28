@@ -6,42 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".activities.RegisterActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="274dp"
-        tools:ignore="MissingConstraints">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nameTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="440dp"
-        tools:ignore="MissingConstraints">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/surnameTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/nameTxt"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:hint="Name"
+        app:layout_constraintBottom_toTopOf="@+id/surnameTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleRegister" />
 
     <Button
         android:id="@+id/doRegisterBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
         android:onClick="doRegister"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="562dp"
+        android:text="REGISTER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterTxt"
         tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/surnameTxt"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:hint="Surname"
+        app:layout_constraintBottom_toTopOf="@+id/birthdayTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/emailTxt"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:hint="Email"
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegisterTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthdayTxt" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordRegisterTxt"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:hint="Password"
+        app:layout_constraintBottom_toTopOf="@+id/doRegisterBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTxt" />
+
+    <TextView
+        android:id="@+id/titleRegister"
+        android:layout_width="206dp"
+        android:layout_height="53dp"
+        android:text="REGISTER"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/nameTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/birthdayTxt"
+        android:layout_width="409dp"
+        android:layout_height="50dp"
+        android:hint="Birthday"
+        app:layout_constraintBottom_toTopOf="@+id/emailTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surnameTxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

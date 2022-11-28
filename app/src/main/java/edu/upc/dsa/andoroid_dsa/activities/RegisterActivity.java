@@ -2,7 +2,6 @@ package edu.upc.dsa.andoroid_dsa.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +21,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     TextInputEditText nameTxt;
     TextInputEditText surnameTxt;
+    TextInputEditText birthdayTxt;
+    TextInputEditText emailTxt;
+    TextInputEditText passwordRegisterTxt;
 
     Api APIservice;
 
@@ -35,9 +37,14 @@ public class RegisterActivity extends AppCompatActivity {
     public void doRegister(View view){
         nameTxt = (TextInputEditText) findViewById(R.id.nameTxt);
         surnameTxt = (TextInputEditText) findViewById(R.id.surnameTxt);
+        birthdayTxt = (TextInputEditText) findViewById(R.id.birthdayTxt);
+        emailTxt = (TextInputEditText) findViewById(R.id.emailTxt);
+        passwordRegisterTxt = (TextInputEditText) findViewById(R.id.passwordRegisterTxt);
+
+        User user = new User(nameTxt.getText().toString(), surnameTxt.getText().toString(), birthdayTxt.getText().toString(), emailTxt.getText().toString(), passwordRegisterTxt.getText().toString());
 
         APIservice = RetrofitClient.getInstance().getMyApi();
-        Call<User> call = APIservice.createUser(new User("Allba","Cognom" ,"kj", "nou@gmail.com", "1234"));
+        Call<User> call = APIservice.createUser(user);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -46,18 +53,15 @@ public class RegisterActivity extends AppCompatActivity {
                         Intent intentRegister = new Intent(RegisterActivity.this, MainActivity.class);
                         RegisterActivity.this.startActivity(intentRegister);
                         break;
-
                     case 409:
                         Snackbar snaky409 = Snackbar.make(view, "This user already exists!", 3000);
                         snaky409.show();
                         break;
-
                     case 500:
                         Snackbar snaky500 = Snackbar.make(view, "Empty register...", 3000);
                         snaky500.show();
                         break;
                 }
-
             }
 
             @Override
@@ -68,8 +72,4 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
-
-
-
-
 }

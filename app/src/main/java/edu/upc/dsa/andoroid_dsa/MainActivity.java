@@ -25,16 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnClicked(View view){
 
-        //if(view==registerBtn){
+        if(view==registerBtn){
             Intent intentRegister = new Intent(MainActivity.this, RegisterActivity.class);
             MainActivity.this.startActivity(intentRegister);
-        //}
-
-
-
+        }
+        if(view==loginBtn){
+            Intent intentRegister = new Intent(MainActivity.this, LogInActivity.class);
+            MainActivity.this.startActivity(intentRegister);
+        }
     }
-
-
-
-
 }

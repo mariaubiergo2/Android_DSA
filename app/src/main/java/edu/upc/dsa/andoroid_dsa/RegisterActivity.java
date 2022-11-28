@@ -18,8 +18,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_main);
 
-
-
     }
 
     public void doRegister(View view){

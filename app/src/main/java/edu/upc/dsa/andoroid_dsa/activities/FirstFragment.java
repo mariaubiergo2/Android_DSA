@@ -1,4 +1,4 @@
-package edu.upc.dsa.andoroid_dsa;
+package edu.upc.dsa.andoroid_dsa.activities;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {

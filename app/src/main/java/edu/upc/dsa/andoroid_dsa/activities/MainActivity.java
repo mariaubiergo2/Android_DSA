@@ -1,4 +1,4 @@
-package edu.upc.dsa.andoroid_dsa;
+package edu.upc.dsa.andoroid_dsa.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,11 +7,20 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.IOException;
+
+import edu.upc.dsa.andoroid_dsa.Api;
+import edu.upc.dsa.andoroid_dsa.R;
+import edu.upc.dsa.andoroid_dsa.RetrofitClient;
+import edu.upc.dsa.andoroid_dsa.models.User;
+import retrofit2.Call;
+
 public class MainActivity extends AppCompatActivity {
 
     Button registerBtn;
     Button loginBtn;
     Button listBtn;
+    Api APIservice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
         listBtn = (Button) findViewById(R.id.listBtn);
     }
 
-    public void btnClicked(View view){
-
+    public void btnClicked(View view) throws IOException {
         if(view==registerBtn){
+            APIservice = RetrofitClient.getInstance().getMyApi();
+            Call<User> call = APIservice.createUser(new User("Allba", "Roma" ,"kj", "dd@gmail.com", "1234"));
+            call.execute().body();
             Intent intentRegister = new Intent(MainActivity.this, RegisterActivity.class);
             MainActivity.this.startActivity(intentRegister);
         }

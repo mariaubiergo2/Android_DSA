@@ -1,4 +1,4 @@
-package edu.upc.dsa.andoroid_dsa;
+package edu.upc.dsa.andoroid_dsa.activities;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+
+import edu.upc.dsa.andoroid_dsa.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

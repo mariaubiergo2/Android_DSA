@@ -16,11 +16,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/titleLogin"
+        android:layout_width="206dp"
+        android:layout_height="53dp"
+        android:text="LOGIN"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/textview_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/doLoginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
+        android:onClick="doLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,10 +52,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textview_second" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/mailTxt"
+        android:id="@+id/emailLoginTxt"
         android:layout_width="309dp"
         android:layout_height="45dp"
-        android:hint="username"
+        android:hint="email"
         app:layout_constraintEnd_toEndOf="@+id/passwordTxt"
         app:layout_constraintStart_toStartOf="@+id/passwordTxt"
         app:layout_constraintTop_toBottomOf="@+id/textview_second">

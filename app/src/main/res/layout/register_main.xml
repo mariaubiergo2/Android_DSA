@@ -8,8 +8,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/nameTxt"
-        android:layout_width="411dp"
-        android:layout_height="50dp"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
         android:hint="Name"
         app:layout_constraintBottom_toTopOf="@+id/surnameTxt"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,8 +30,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/surnameTxt"
-        android:layout_width="411dp"
-        android:layout_height="50dp"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
         android:hint="Surname"
         app:layout_constraintBottom_toTopOf="@+id/birthdayTxt"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +40,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/emailTxt"
-        android:layout_width="411dp"
-        android:layout_height="50dp"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
         android:hint="Email"
         app:layout_constraintBottom_toTopOf="@+id/passwordRegisterTxt"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,8 +50,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/passwordRegisterTxt"
-        android:layout_width="411dp"
-        android:layout_height="50dp"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
         android:hint="Password"
         app:layout_constraintBottom_toTopOf="@+id/doRegisterBtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,8 +72,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/birthdayTxt"
-        android:layout_width="409dp"
-        android:layout_height="50dp"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
         android:hint="Birthday"
         app:layout_constraintBottom_toTopOf="@+id/emailTxt"
         app:layout_constraintEnd_toEndOf="parent"

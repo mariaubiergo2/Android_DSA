@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="edu.upc.dsa.andoroid_dsa.activities.PrincipalActivity"
+        android:name="edu.upc.dsa.andoroid_dsa.activities.GadgetActivity"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/principal_main">
+        tools:layout="@layout/gadget_list_main">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"

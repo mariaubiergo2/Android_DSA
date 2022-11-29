@@ -9,13 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 
-import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
-import edu.upc.dsa.andoroid_dsa.RetrofitClient;
-import edu.upc.dsa.andoroid_dsa.models.User;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         }
         if(view==loginBtn){
             Intent intentRegister = new Intent(MainActivity.this, LogInActivity.class);
+            MainActivity.this.startActivity(intentRegister);
+        }
+        if(view==listBtn){
+            Intent intentRegister = new Intent(MainActivity.this, GadgetActivity.class);
             MainActivity.this.startActivity(intentRegister);
         }
     }

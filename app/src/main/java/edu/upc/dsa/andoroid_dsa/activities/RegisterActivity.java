@@ -35,11 +35,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void doRegister(View view){
-        nameTxt = (TextInputEditText) findViewById(R.id.nameTxt);
-        surnameTxt = (TextInputEditText) findViewById(R.id.surnameTxt);
-        birthdayTxt = (TextInputEditText) findViewById(R.id.birthdayTxt);
-        emailTxt = (TextInputEditText) findViewById(R.id.emailTxt);
-        passwordRegisterTxt = (TextInputEditText) findViewById(R.id.passwordRegisterTxt);
+        nameTxt = findViewById(R.id.nameTxt);
+        surnameTxt = findViewById(R.id.surnameTxt);
+        birthdayTxt = findViewById(R.id.birthdayTxt);
+        emailTxt = findViewById(R.id.emailTxt);
+        passwordRegisterTxt = findViewById(R.id.passwordRegisterTxt);
 
         User user = new User(nameTxt.getText().toString(), surnameTxt.getText().toString(), birthdayTxt.getText().toString(), emailTxt.getText().toString(), passwordRegisterTxt.getText().toString());
 

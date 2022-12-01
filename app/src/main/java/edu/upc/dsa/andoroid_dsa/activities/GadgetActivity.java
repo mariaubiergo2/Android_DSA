@@ -69,4 +69,10 @@ public class GadgetActivity extends AppCompatActivity {
             tableLayout.addView(tableRow);
         }
     }
+
+    public void returnFunction(View view){
+        Intent intentRegister = new Intent(GadgetActivity.this, MainActivity.class);
+        GadgetActivity.this.startActivity(intentRegister);
+    }
+
 }

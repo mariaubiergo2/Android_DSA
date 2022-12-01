@@ -4,21 +4,20 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Credentials {
+    String Email;
+    String password;
 
-    private String email;
-    private String password;
-
-    public Credentials(String password, String mail) {
-        this.setMail(mail);
-        this.setPassword(password);
+    public Credentials(String email, String password){
+        this.Email=email;
+        this.password=password;
     }
 
-    public String getMail() {
-        return email;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setMail(String mail) {
-        this.email = mail;
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public String getPassword() {

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.GadgetActivity">
+    tools:context=".activities.GadgetActivity"
+    tools:ignore="ExtraText">
 
     <TextView
         android:id="@+id/titleRegister2"
@@ -20,12 +21,13 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="544dp"
+        android:layout_width="413dp"
+        android:layout_height="422dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleRegister2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableLayout
             android:id="@+id/tableLayout"
@@ -35,6 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,41 +45,52 @@
 
                 <TextView
                     android:id="@+id/gadgetId"
-                    android:text="Id"
-                    android:textStyle="bold"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.25"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:text="Id"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/gadgetCost"
-                    android:text="Cost"
-                    android:textStyle="bold"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.25"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:text="Cost"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/gadgetDescription"
-                    android:text="Description"
-                    android:textStyle="bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:text="Description"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/gadgetUnityShape"
-                    android:text="Unity Shape"
-                    android:textStyle="bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:text="Unity Shape"
+                    android:textStyle="bold" />
             </TableRow>
         </TableLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/returnGadgetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="returnFunction"
+        android:text="go back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

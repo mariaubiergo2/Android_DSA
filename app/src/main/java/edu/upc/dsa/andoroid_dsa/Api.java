@@ -15,7 +15,7 @@ public interface Api {
     Call<User> createUser(@Body User user);
 
     @POST("shop/user/login")
-    Call<User> logIn(@Body Credentials credentials);
+    Call<Credentials> logIn(@Body Credentials credentials);
 
     @GET("shop/gadget/all")
     Call<List<Gadget>> getGadgets();

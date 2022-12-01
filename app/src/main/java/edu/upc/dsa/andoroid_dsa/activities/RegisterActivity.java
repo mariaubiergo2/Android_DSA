@@ -72,4 +72,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
+
+    public void returnFunction(View view){
+        Intent intentRegister = new Intent(RegisterActivity.this, MainActivity.class);
+        RegisterActivity.this.startActivity(intentRegister);
+    }
 }

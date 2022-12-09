@@ -1,23 +1,22 @@
 package edu.upc.dsa.andoroid_dsa.models;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 public class Credentials {
-    String Email;
+    String email;
     String password;
 
+    public Credentials(){}
+
     public Credentials(String email, String password){
-        this.Email=email;
+        this.email =email;
         this.password=password;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {

@@ -1,8 +1,5 @@
 package edu.upc.dsa.andoroid_dsa.models;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 public class User {
 
     private String name;
@@ -11,15 +8,17 @@ public class User {
 
     private String birthday;
 
-    private String mail;
+    private String email;
 
     private String password;
 
-    public User(String name, String surname, String birthday, String mail, String password){
+    public User(){}
+
+    public User(String name, String surname, String birthday, String email, String password){
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
-        this.mail = mail;
+        this.email = email;
         this.password = password;
     }
 
@@ -47,12 +46,12 @@ public class User {
         this.birthday = birthday;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

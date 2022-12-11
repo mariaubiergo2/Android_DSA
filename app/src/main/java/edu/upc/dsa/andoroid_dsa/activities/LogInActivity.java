@@ -56,7 +56,7 @@ public class LogInActivity extends AppCompatActivity {
             public void onResponse(Call<Credentials> call, Response<Credentials> response) {
                 switch (response.code()){
                     case 201:
-                        Intent intentRegister = new Intent(LogInActivity.this, PrincipalActivity.class);
+                        Intent intentRegister = new Intent(LogInActivity.this, GadgetActivity.class);
                         LogInActivity.this.startActivity(intentRegister);
                         Snackbar snaky201 = Snackbar.make(view, "Correctly login", 3000);
                         snaky201.show();

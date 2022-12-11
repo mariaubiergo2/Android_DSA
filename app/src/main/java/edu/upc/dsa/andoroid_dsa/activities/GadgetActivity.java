@@ -2,13 +2,16 @@ package edu.upc.dsa.andoroid_dsa.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,13 +35,25 @@ public class GadgetActivity extends AppCompatActivity {
 
     Api APIservice;
 
+    Button logout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gadget_list_main);
         tableLayout = findViewById(R.id.tableLayout);
-
+        logout =findViewById(R.id.logOutBtn);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                SharedPreferences.Editor editor =preferences.edit();
+                editor.putString("remember","false");
+                editor.apply();
+                finish();
+            }
+        });
         APIservice = RetrofitClient.getInstance().getMyApi();
         Call<List<Gadget>> call = APIservice.getGadgets();
         try {

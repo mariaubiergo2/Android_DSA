@@ -74,4 +74,12 @@
         app:layout_constraintStart_toStartOf="@+id/passwordTxt"
         app:layout_constraintTop_toBottomOf="@+id/textview_second"/>
 
+    <CheckBox
+        android:id="@+id/rememberBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        app:layout_constraintStart_toStartOf="@+id/passwordTxt"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTxt" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

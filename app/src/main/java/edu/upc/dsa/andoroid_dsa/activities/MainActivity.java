@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button registerBtn;
     Button loginBtn;
-    CheckBox remember;
+
 
 
     @Override
@@ -29,38 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         registerBtn = (Button) findViewById(R.id.registerBtn);
         loginBtn = (Button) findViewById(R.id.loginBtn);
-        remember=findViewById(R.id.rememberBox);
 
-        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-        String checkbox = preferences.getString("remember","");
-        if (checkbox.equals("true")){
-            Intent intent = new Intent(MainActivity.this,GadgetActivity.class);
-            startActivity(intent);
-        }
-        else if(checkbox.equals("false")){
-            Toast.makeText(this,"Please Sign In.", Toast.LENGTH_SHORT).show();
-
-        }
-        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(compoundButton.isChecked()){
-                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-                    SharedPreferences.Editor editor =preferences.edit();
-                    editor.putString("remember","true");
-                    editor.apply();
-                    Toast.makeText(MainActivity.this,"Checked", Toast.LENGTH_SHORT).show();
-                }
-                else if (!compoundButton.isChecked()){
-                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-                    SharedPreferences.Editor editor =preferences.edit();
-                    editor.putString("remember","false");
-                    editor.apply();
-                    Toast.makeText(MainActivity.this,"Unchecked", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
     }
 
     public void btnClicked(View view) throws IOException {

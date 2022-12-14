@@ -5,6 +5,7 @@ public class Gadget {
     int cost;
     String description;
     String unityShape;
+    //int imagenGadget;
 
     public Gadget(){}
 

@@ -37,13 +37,19 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/costGadget"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/idGadget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/descriptionGadget"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TextView" />

@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -37,11 +39,14 @@ public class GadgetActivity extends AppCompatActivity {
 
     Button logout;
 
-
+    //private RecyclerView recyclerViewGadgets;
+    //private RecyclerViewAdapter adaptadorGadgets;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gadget_list_main);
+        //recyclerViewGadgets=(RecyclerView)findViewById(R.id.recyclerGadget);
+        //recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
         tableLayout = findViewById(R.id.tableLayout);
         logout =findViewById(R.id.logOutBtn);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +66,8 @@ public class GadgetActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //adaptadorGadgets= new RecyclerViewAdapter(call.execute().body());
+        //recyclerViewGadgets.setAdapter(adaptadorGadgets);
     }
 
     @SuppressLint("SetTextI18n")

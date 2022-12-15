@@ -1,5 +1,9 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
+import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.SHARED_PREFS;
+import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.TEXT1;
+import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.TEXT2;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -49,16 +53,6 @@ public class GadgetActivity extends AppCompatActivity {
         //recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
         tableLayout = findViewById(R.id.tableLayout);
         logout =findViewById(R.id.logOutBtn);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
-                SharedPreferences.Editor editor =preferences.edit();
-                editor.putString("remember","false");
-                editor.apply();
-                finish();
-            }
-        });
         APIservice = RetrofitClient.getInstance().getMyApi();
         Call<List<Gadget>> call = APIservice.getGadgets();
         try {
@@ -68,6 +62,15 @@ public class GadgetActivity extends AppCompatActivity {
         }
         //adaptadorGadgets= new RecyclerViewAdapter(call.execute().body());
         //recyclerViewGadgets.setAdapter(adaptadorGadgets);
+    }
+    public void btnClicked(View view) throws IOException {
+        SharedPreferences preferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor =preferences.edit();
+        editor.putString(TEXT1, "");
+        editor.putString(TEXT2, "");
+        editor.apply();
+        Intent intent = new Intent(GadgetActivity.this, MainActivity.class);
+        GadgetActivity.this.startActivity(intent);
     }
 
     @SuppressLint("SetTextI18n")

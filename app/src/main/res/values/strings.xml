@@ -13,4 +13,6 @@
     <string name="register">Register</string>
     <string name="login">LogIn</string>
     <string name="list_objects">List Objects</string>
+    <string name="hello">Hello</string>
+    <string name="your_profile">Your profile</string>
 </resources>

@@ -80,7 +80,7 @@ public class LogInActivity extends AppCompatActivity {
                     case 201:
                         saveData();
 
-                        Intent intentRegister = new Intent(LogInActivity.this, GadgetActivity.class);
+                        Intent intentRegister = new Intent(LogInActivity.this, DashBoardActivity.class);
                         LogInActivity.this.startActivity(intentRegister);
                         Toast.makeText(LogInActivity.this,"Correctly login", Toast.LENGTH_SHORT).show();
                         break;

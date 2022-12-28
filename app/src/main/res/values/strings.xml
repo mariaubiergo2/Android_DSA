@@ -15,4 +15,10 @@
     <string name="list_objects">List Objects</string>
     <string name="hello">Hello</string>
     <string name="your_profile">Your profile</string>
+    <string name="updating_title">update_title</string>
+    <string name="updating_username">updating_username</string>
+    <string name="updating_surname">updating_surname</string>
+    <string name="updating_birthday">updating_birthday</string>
+    <string name="updating_email">updating_email</string>
+    <string name="updating_password">updating_password</string>
 </resources>

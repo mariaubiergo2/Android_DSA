@@ -68,6 +68,31 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".activities.YourProfileActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Andoroid_DSA.NoActionBar">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.DashBoardActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Andoroid_DSA.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

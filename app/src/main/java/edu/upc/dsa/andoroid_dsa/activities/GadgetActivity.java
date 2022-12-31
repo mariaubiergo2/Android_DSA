@@ -9,10 +9,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,31 +39,33 @@ import retrofit2.Response;
 
 public class GadgetActivity extends AppCompatActivity {
 
-    TableLayout tableLayout;
+    //TableLayout tableLayout;
 
     Api APIservice;
 
     Button logout;
 
-    //private RecyclerView recyclerViewGadgets;
-    //private RecyclerViewAdapter adaptadorGadgets;
+    private RecyclerView recyclerViewGadgets;
+    private RecyclerViewAdapter adaptadorGadgets;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gadget_list_main);
-        //recyclerViewGadgets=(RecyclerView)findViewById(R.id.recyclerGadget);
-        //recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
-        tableLayout = findViewById(R.id.tableLayout);
-        logout =findViewById(R.id.logOutBtn);
+        setContentView(R.layout.provisional_gadgetlist);
+        //recyclerViewGadgets= new RecyclerView(this);
+        recyclerViewGadgets=(RecyclerView)findViewById(R.id.recyclerGadget);
+        Log.d("DDDD", ""+recyclerViewGadgets);
+        recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
+        //tableLayout = findViewById(R.id.tableLayout);
+        //logout =findViewById(R.id.logOutBtn);
         APIservice = RetrofitClient.getInstance().getMyApi();
         Call<List<Gadget>> call = APIservice.getGadgets();
         try {
-            buildTable(call);
+            adaptadorGadgets= new RecyclerViewAdapter(call.execute().body());
+            //buildTable(call);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //adaptadorGadgets= new RecyclerViewAdapter(call.execute().body());
-        //recyclerViewGadgets.setAdapter(adaptadorGadgets);
+        recyclerViewGadgets.setAdapter(adaptadorGadgets);
     }
     public void btnClicked(View view) throws IOException {
         SharedPreferences preferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -91,7 +95,7 @@ public class GadgetActivity extends AppCompatActivity {
             gadgetDescription.setText(gadget.getDescription());
             gadgetUnityShape.setText(gadget.getUnityShape());
 
-            tableLayout.addView(tableRow);
+            //tableLayout.addView(tableRow);
         }
     }
 

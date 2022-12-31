@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import edu.upc.dsa.andoroid_dsa.R;
@@ -45,8 +47,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.id.setText(gadgets.get(position).getId());
         holder.description.setText(gadgets.get(position).getDescription());
-        holder.cost.setText(gadgets.get(position).getCost());
-        //holder.fotoGadget.setImageResource(gadgets.get(position));
+        holder.cost.setText(Integer.toString(gadgets.get(position).getCost()));
+        holder.fotoGadget.setImageResource(R.drawable.g);
     }
 
     @Override

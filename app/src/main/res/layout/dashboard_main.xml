@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/snow_bg"
-    tools:context=".activities.DashBoardActivity">
+    android:background="@drawable/main_back_dif"
+    tools:context=".activities.DashBoardActivity"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hi there, "
-            android:textColor="@color/white"
+            android:textColor="@color/green_vibrant"
+            android:fontFamily="@font/play_regular"
             android:textSize="40sp"
             android:textStyle="bold"
             android:textAlignment="center">
@@ -34,7 +36,8 @@
             android:layout_marginTop="5dp"
             android:inputType="text"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/green_vibrant"
+            android:fontFamily="@font/play_regular"
             android:textSize="40sp"
             android:textAlignment="center"
             android:id="@+id/Edit_Title_Update"
@@ -57,11 +60,12 @@
             android:layout_weight="1"
             app:cardCornerRadius="10dp"
             app:cardElevation="5dp">
+
             <LinearLayout
                 android:id="@+id/start"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gradient_2"
+                android:layout_height="110dp"
+                android:background="@drawable/cardview_back2"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -82,20 +86,24 @@
 
 
                 </androidx.cardview.widget.CardView>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/your_profile"
+                    android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:textColor="@color/white"
-                    android:textSize="25sp">
-                </TextView>
+                    android:text="@string/your_profile"
+                    android:textColor="@color/green_vibrant"
+                    android:textStyle="bold"
+                    android:textSize="25sp" />
+
                 <TextView
                     android:layout_width="163dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/play_regular"
                     android:lines="1"
                     android:text="Acces to your profile!"
-                    android:textColor="@color/white"
+                    android:textColor="@color/green_vibrant"
                     android:textSize="15sp">
 
                 </TextView>
@@ -118,11 +126,12 @@
             android:layout_weight="1"
             app:cardCornerRadius="10dp"
             app:cardElevation="5dp">
+
             <LinearLayout
                 android:id="@+id/gadget_shop"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gradient_3"
+                android:layout_height="110dp"
+                android:background="@drawable/cardview_back2"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -137,30 +146,31 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/gadget_shop_asset"
-                        android:padding="8dp"
-                        >
+                        android:padding="8dp">
 
                     </ImageView>
 
 
                 </androidx.cardview.widget.CardView>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Gadget Shop"
+                    android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:textColor="@color/white"
-                    android:textSize="25sp">
-                </TextView>
+                    android:text="Gadget Shop"
+                    android:textColor="@color/green_vibrant"
+                    android:textStyle="bold"
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_width="163dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/play_regular"
                     android:lines="1"
                     android:text="Buy some gadgets!"
-                    android:textColor="@color/white"
-                    android:textSize="15sp">
-                </TextView>
+                    android:textColor="@color/green_vibrant"
+                    android:textSize="15sp" />
 
 
             </LinearLayout>
@@ -173,23 +183,25 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="330dp">
+
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="225dp"
             android:layout_height="wrap_content"
-            android:elevation="5dp"
-            app:cardMaxElevation="5dp"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
             app:cardCornerRadius="10dp"
-            app:cardElevation="5dp">
+            app:cardElevation="5dp"
+            app:cardMaxElevation="5dp">
+
             <LinearLayout
                 android:id="@+id/run_game"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gradient_1"
+                android:layout_height="161dp"
+                android:background="@drawable/castillo"
                 android:orientation="vertical"
                 android:padding="15dp">
 
@@ -208,86 +220,48 @@
                     </ImageView>
 
 
+
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Start playing!"
+                    android:fontFamily="@font/play_bold"
                     android:lines="1"
-                    android:textColor="@color/white"
-
-                    android:textSize="25sp">
-                </TextView>
-
+                    android:text="START PLAYING"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_vibrant"
+                    android:textStyle="bold"
+                    android:textSize="25sp" />
                 <TextView
-                    android:layout_width="251dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Let's see if you can scape!"
-                    android:textColor="@color/white"
-                    android:textSize="15sp">
-
-                </TextView>
-
-
+                    android:text="Can you save the witcher?"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_vibrant"
+                    android:textStyle="italic"
+                    android:textSize="25sp" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/returnBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="460dp">
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="5dp"
-            app:cardMaxElevation="5dp"
-            android:clickable="true"
-            android:focusable="true"
-
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="5dp">
-            <LinearLayout
-                android:id="@+id/log_out"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/gradient_4"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/logOutCard"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    app:cardBackgroundColor="@color/black"
-                    app:cardCornerRadius="10dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/log_out_asset"
-                        android:padding="8dp">
-                    </ImageView>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Exit!"
-                    android:lines="1"
-                    android:textColor="@color/white"
-                    android:textSize="25sp">
-                </TextView>
-
-            </LinearLayout>
+        android:layout_marginBottom="680dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:fontFamily="@font/play_regular"
+        android:onClick="returnFunction"
+        android:text="←"
+        android:textColor="@color/green_vibrant"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="1dp" />
 
 
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
 </RelativeLayout>

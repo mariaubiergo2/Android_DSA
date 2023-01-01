@@ -44,10 +44,10 @@ public class PrincipalActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(!Objects.equals(text1, "") && !Objects.equals(text2, "")) {
-                    Intent intent = new Intent(PrincipalActivity.this, GadgetActivity.class);
+                    Intent intent = new Intent(PrincipalActivity.this, DashBoardActivity.class);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(PrincipalActivity.this, MainActivity.class);
+                    Intent intent = new Intent(PrincipalActivity.this, LogInActivity.class);
                     startActivity(intent);
                 }
                 finish();

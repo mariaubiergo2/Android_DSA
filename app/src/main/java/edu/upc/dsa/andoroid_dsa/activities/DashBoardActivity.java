@@ -56,7 +56,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 i=new Intent(this,GadgetActivity.class);
                 startActivity(i);
                 break;
-            case R.id.logOutCard:
+            case R.id.returnBtn:
                 i=new Intent(this, PrincipalActivity.class);
                 startActivity(i);
                 break;
@@ -97,10 +97,10 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     public void getCardViewsReady(){
         yourProfile=(CardView) findViewById(R.id.profiles);
         gadgetShop=(CardView) findViewById(R.id.gadgetCard);
-        logOut=(CardView) findViewById(R.id.logOutCard);
+
         yourProfile.setOnClickListener(this);
         gadgetShop.setOnClickListener(this);
-        logOut.setOnClickListener(this);
+
     }
     public void saveVariables(UserInformation userInformation) {
         SharedPreferences sharedPreferences= getSharedPreferences("userInformation", Context.MODE_PRIVATE);
@@ -115,7 +115,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         Log.i("SAVING: ",userInformation.getBirthday());
         Log.i("SAVING: ",userInformation.getEmail());
         Log.i("SAVING: ",userInformation.getPassword());
-        editor.commit();
+        editor.apply();
     }
 
 }

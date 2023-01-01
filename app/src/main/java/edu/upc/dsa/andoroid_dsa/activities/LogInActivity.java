@@ -115,4 +115,9 @@ public class LogInActivity extends AppCompatActivity {
         Log.i("SAVING: ",userIdR.getIdUser());
         editor.commit();
     }
+    public void ClickRegister(View view){
+        Intent intentRegister = new Intent(LogInActivity.this, RegisterActivity.class);
+        LogInActivity.this.startActivity(intentRegister);
+
+    }
 }

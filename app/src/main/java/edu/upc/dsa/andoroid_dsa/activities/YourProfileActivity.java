@@ -1,8 +1,10 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,5 +58,9 @@ public class YourProfileActivity extends AppCompatActivity {
         this.birthday = sharedPreferences.getString("birthday",null).toString();
         this.email = sharedPreferences.getString("email",null).toString();
         this.password = sharedPreferences.getString("password",null).toString();
+    }
+    public void Return(View view){
+        Intent intentRegister = new Intent(YourProfileActivity.this, DashBoardActivity.class);
+        YourProfileActivity.this.startActivity(intentRegister);
     }
 }

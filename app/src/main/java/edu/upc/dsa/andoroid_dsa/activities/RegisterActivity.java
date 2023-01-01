@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 switch (response.code()){
                     case 201:
-                        Intent intentRegister = new Intent(RegisterActivity.this, MainActivity.class);
+                        Intent intentRegister = new Intent(RegisterActivity.this, LogInActivity.class);
                         RegisterActivity.this.startActivity(intentRegister);
                         break;
                     case 409:

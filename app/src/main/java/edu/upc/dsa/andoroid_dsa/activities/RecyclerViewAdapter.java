@@ -1,5 +1,8 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +18,12 @@ import java.util.List;
 
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
+import edu.upc.dsa.andoroid_dsa.models.UserInformation;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+
     public static class ViewHolder extends RecyclerView.ViewHolder{
+
         public TextView id,cost,description;
         ImageView fotoGadget;
 
@@ -38,7 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.provisional_tablegadgetitem,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_gadget,parent,false);
         ViewHolder viewHolder= new ViewHolder(view);
         return viewHolder;
     }

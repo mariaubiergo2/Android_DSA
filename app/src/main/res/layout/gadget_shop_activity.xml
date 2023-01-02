@@ -5,7 +5,8 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/main_back_dif">
+    android:background="@drawable/main_back_dif"
+    tools:context=".activities.GadgetActivity">
 
     <TextView
         android:id="@+id/title_gadgets"

@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
+//import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import edu.upc.dsa.andoroid_dsa.models.Gadget;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView id,cost,description;
+        public TextView id,cost,description;
         ImageView fotoGadget;
 
         public ViewHolder(@NonNull View itemView) {

@@ -47,6 +47,7 @@ public class GadgetActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewGadgets;
     private RecyclerViewAdapter adaptadorGadgets;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,7 +1,7 @@
 package edu.upc.dsa.andoroid_dsa.models;
 
 public class Gadget {
-    String id;
+    String idGadget;
     int cost;
     String description;
     String unityShape;
@@ -9,19 +9,19 @@ public class Gadget {
 
     public Gadget(){}
 
-    public Gadget(String id, int cost, String description, String unityShape) {
-        this.id = id;
+    public Gadget(String idGadget, int cost, String description, String unityShape) {
+        this.idGadget = idGadget;
         this.cost = cost;
         this.description = description;
         this.unityShape = unityShape;
     }
 
-    public String getId() {
-        return id;
+    public String getIdGadget() {
+        return this.idGadget;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String idGadget) {
+        this.idGadget = idGadget;
     }
 
     public int getCost() {

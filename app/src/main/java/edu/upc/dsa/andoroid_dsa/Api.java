@@ -13,6 +13,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface Api {
@@ -27,4 +28,7 @@ public interface Api {
 
     @GET("shop/user/{idUser}")
     Call<UserInformation> getUser(@Path("idUser") String idUser);
+
+    @PUT("shop/gadget/buy/{idGadget}/{idUser}")
+    Call<Void> buyAGadget(@Path("idGadget") String idGadget,@Path("idUser") String idUser);
 }

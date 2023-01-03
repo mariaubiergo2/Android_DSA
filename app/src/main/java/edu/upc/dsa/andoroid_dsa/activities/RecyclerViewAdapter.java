@@ -1,8 +1,5 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +15,12 @@ import java.util.List;
 
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
-import edu.upc.dsa.andoroid_dsa.models.UserInformation;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+    private static RecycleClickViewListener listener;
+    public List<Gadget> gadgets;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView id,cost,description;
         ImageView fotoGadget;
@@ -33,12 +31,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             cost=(TextView)itemView.findViewById(R.id.costGadget);
             description=(TextView)itemView.findViewById(R.id.descriptionGadget);
             fotoGadget=(ImageView) itemView.findViewById(R.id.imgGadget);
+            itemView.setOnClickListener(this);
+        }
+        @Override
+        public void onClick(View view){
+            listener.recyclerViewListClicked(this.getLayoutPosition());
         }
     }
-    public List<Gadget> gadgets;
 
-    public RecyclerViewAdapter(List<Gadget> gadgets) {
+    public RecyclerViewAdapter(List<Gadget> gadgets, RecycleClickViewListener listener) {
         this.gadgets = gadgets;
+        this.listener =listener;
     }
 
     @NonNull
@@ -51,7 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.id.setText(gadgets.get(position).getId());
+        holder.id.setText(gadgets.get(position).getIdGadget());
         holder.description.setText(gadgets.get(position).getDescription());
         holder.cost.setText(Integer.toString(gadgets.get(position).getCost()));
         holder.fotoGadget.setImageResource(R.drawable.g);
@@ -61,4 +64,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public int getItemCount() {
         return gadgets.size();
     }
+
 }

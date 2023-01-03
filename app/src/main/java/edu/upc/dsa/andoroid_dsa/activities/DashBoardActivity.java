@@ -53,6 +53,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(i);
                 break;
             case R.id.gadgetCard:
+                saveUserId(this.userId);
                 i=new Intent(this,GadgetActivity.class);
                 startActivity(i);
                 break;
@@ -97,10 +98,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     public void getCardViewsReady(){
         yourProfile=(CardView) findViewById(R.id.profiles);
         gadgetShop=(CardView) findViewById(R.id.gadgetCard);
-
         yourProfile.setOnClickListener(this);
         gadgetShop.setOnClickListener(this);
-
     }
     public void saveVariables(UserInformation userInformation) {
         SharedPreferences sharedPreferences= getSharedPreferences("userInformation", Context.MODE_PRIVATE);
@@ -115,6 +114,13 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         Log.i("SAVING: ",userInformation.getBirthday());
         Log.i("SAVING: ",userInformation.getEmail());
         Log.i("SAVING: ",userInformation.getPassword());
+        editor.apply();
+    }
+    public void saveUserId(String userId){
+        SharedPreferences sharedPreferences= getSharedPreferences("userId", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("userId", userId);
+        Log.i("SAVING: ",userId);
         editor.apply();
     }
 

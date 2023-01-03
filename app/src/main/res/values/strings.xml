@@ -21,4 +21,8 @@
     <string name="updating_birthday">updating_birthday</string>
     <string name="updating_email">updating_email</string>
     <string name="updating_password">updating_password</string>
+    <string name="updating_identifier">updating_identifier</string>
+    <string name="updating_description">updating_description</string>
+    <string name="updating_cost">updating_cost</string>
+    <string name="updating_title_gadget">updating_title_gadget</string>
 </resources>

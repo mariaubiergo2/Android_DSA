@@ -57,7 +57,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:onClick="buyItem"
             android:background="@color/material_blue_grey_800"
             android:src="@drawable/gadget_shop_asset" />
 

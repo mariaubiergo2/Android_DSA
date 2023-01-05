@@ -109,11 +109,13 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         editor.putString("birthday",userInformation.getBirthday());
         editor.putString("email",userInformation.getEmail());
         editor.putString("password",userInformation.getPassword());
+        editor.putString("coins",Integer.toString(userInformation.getCoins()));
         Log.i("SAVING: ",userInformation.getName());
         Log.i("SAVING: ",userInformation.getSurname());
         Log.i("SAVING: ",userInformation.getBirthday());
         Log.i("SAVING: ",userInformation.getEmail());
         Log.i("SAVING: ",userInformation.getPassword());
+        Log.i("SAVING. ",Integer.toString(userInformation.getCoins()));
         editor.apply();
     }
     public void saveUserId(String userId){

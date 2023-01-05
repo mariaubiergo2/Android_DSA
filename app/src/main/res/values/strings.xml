@@ -25,4 +25,5 @@
     <string name="updating_description">updating_description</string>
     <string name="updating_cost">updating_cost</string>
     <string name="updating_title_gadget">updating_title_gadget</string>
+    <string name="updating_coins">updating_coins</string>
 </resources>

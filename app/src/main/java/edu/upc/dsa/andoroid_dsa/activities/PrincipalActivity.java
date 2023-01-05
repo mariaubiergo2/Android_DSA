@@ -59,7 +59,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        text1 = sharedPreferences.getString(TEXT1, "");
-        text2 = sharedPreferences.getString(TEXT2, "");
+        text1 = sharedPreferences.getString( TEXT1,"" );
+        text2 = sharedPreferences.getString( TEXT2,"" );
     }
 }

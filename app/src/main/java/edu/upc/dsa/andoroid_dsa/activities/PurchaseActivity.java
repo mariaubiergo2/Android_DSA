@@ -31,14 +31,13 @@ public class PurchaseActivity extends AppCompatActivity {
         setContentView(R.layout.purchase_activity);
         this.getVariables();
         this.updateLabels();
-
     }
-    public void getVariables(){
+    public void getVariables() {
         SharedPreferences sharedPreferences = getSharedPreferences("gadgetItem", Context.MODE_PRIVATE);
-        this.idUser = sharedPreferences.getString("idUser",null).toString();
-        this.idGadget = sharedPreferences.getString("idGadget",null).toString();
-        this.descriptionGadget = sharedPreferences.getString("descriptionGadget",null).toString();
-        this.costGadget=sharedPreferences.getString("costGadget",null).toString();
+        this.idUser = sharedPreferences.getString("idUser", null).toString();
+        this.idGadget = sharedPreferences.getString("idGadget", null).toString();
+        this.descriptionGadget = sharedPreferences.getString("descriptionGadget", null).toString();
+        this.costGadget = sharedPreferences.getString("costGadget", null).toString();
     }
     public void buyGadget(View view){
         APIservice = RetrofitClient.getInstance().getMyApi();
@@ -66,8 +65,6 @@ public class PurchaseActivity extends AppCompatActivity {
                 Toast.makeText(PurchaseActivity.this,"NETWORK FAILURE :(", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
     public void updateLabels(){
         String updateTitle =getString(R.string.updating_title_gadget);
@@ -91,6 +88,4 @@ public class PurchaseActivity extends AppCompatActivity {
         Intent intent = new Intent(PurchaseActivity.this, GadgetActivity.class);
         startActivity(intent);
     }
-
-
 }

@@ -18,6 +18,8 @@ public class YourProfileActivity extends AppCompatActivity {
     public String birthday;
     public String email;
     public String password;
+    public String coins;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,15 +52,22 @@ public class YourProfileActivity extends AppCompatActivity {
         updatePassword=this.password;
         EditText editorPassword = (EditText) findViewById (R.id.pass_word);
         editorPassword.setText(updatePassword);
+        String update_coins= getString(R.string.updating_coins);
+        update_coins=this.coins;
+        EditText editor_coins = (EditText) findViewById(R.id.co_ins);
+        editor_coins.setText(update_coins);
     }
-    public void getVariables(){
+
+    public void getVariables() {
         SharedPreferences sharedPreferences = getSharedPreferences("userInformation", Context.MODE_PRIVATE);
-        this.username = sharedPreferences.getString("username",null).toString();
-        this.surname = sharedPreferences.getString("surname",null).toString();
-        this.birthday = sharedPreferences.getString("birthday",null).toString();
-        this.email = sharedPreferences.getString("email",null).toString();
-        this.password = sharedPreferences.getString("password",null).toString();
+        this.username = sharedPreferences.getString("username", null).toString();
+        this.surname = sharedPreferences.getString("surname", null).toString();
+        this.birthday = sharedPreferences.getString("birthday", null).toString();
+        this.email = sharedPreferences.getString("email", null).toString();
+        this.password = sharedPreferences.getString("password", null).toString();
+        this.coins=sharedPreferences.getString("coins",null).toString();
     }
+
     public void Return(View view){
         Intent intentRegister = new Intent(YourProfileActivity.this, DashBoardActivity.class);
         YourProfileActivity.this.startActivity(intentRegister);

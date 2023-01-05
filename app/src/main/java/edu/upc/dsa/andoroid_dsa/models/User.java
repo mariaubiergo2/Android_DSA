@@ -12,14 +12,17 @@ public class User {
 
     private String password;
 
+    private int coins;
+
     public User(){}
 
-    public User(String name, String surname, String birthday, String email, String password){
+    public User(String name, String surname, String birthday, String email, String password,int coins){
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
         this.email = email;
         this.password = password;
+        this.coins=coins;
     }
 
     public String getName() {
@@ -60,5 +63,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
     }
 }

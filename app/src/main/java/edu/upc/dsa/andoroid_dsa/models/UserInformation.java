@@ -6,15 +6,17 @@ public class UserInformation {
     String birthday;
     String email;
     String password;
+    int coins;
 
     public UserInformation(){};
 
-    public UserInformation(String name, String surname, String birthday, String email, String password){
+    public UserInformation(String name, String surname, String birthday, String email, String password,int coins){
         this.setName(name);
         this.setSurname(surname);
         this.setBirthday(birthday);
         this.setEmail(email);
         this.setPassword(password);
+        this.setCoins(coins);
 
     }
 
@@ -24,6 +26,7 @@ public class UserInformation {
         this.setBirthday(u.getBirthday());
         this.setEmail(u.getEmail());
         this.setPassword(u.getPassword());
+        this.setCoins(u.getCoins());
     }
 
 
@@ -65,5 +68,13 @@ public class UserInformation {
 
     public String getName() {
         return this.name;
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
     }
 }

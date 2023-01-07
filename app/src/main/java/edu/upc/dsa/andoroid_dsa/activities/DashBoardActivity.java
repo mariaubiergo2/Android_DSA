@@ -75,6 +75,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                         assert userInformation != null;
                         updateLabel(userInformation);
                         saveVariables(userInformation);
+                        saveUserId(userId);
                         Toast.makeText(DashBoardActivity.this,"Correctly received UserInformation", Toast.LENGTH_SHORT).show();
                         break;
                     case 409:

@@ -31,4 +31,9 @@ public interface Api {
 
     @PUT("shop/gadget/buy/{idGadget}/{idUser}")
     Call<Void> buyAGadget(@Path("idGadget") String idGadget,@Path("idUser") String idUser);
+    @GET("shop/purchase/{idUser}")
+    Call<List<Gadget>> purchasedGadgets(@Path("idUser") String idUser);
+    @GET("shop/gadget/{idGadget}")
+    Call<Gadget> getGadget(@Path("idUser") String idGadget);
+
 }

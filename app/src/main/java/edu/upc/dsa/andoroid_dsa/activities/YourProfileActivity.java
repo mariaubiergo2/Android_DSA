@@ -4,21 +4,36 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
+import edu.upc.dsa.andoroid_dsa.RetrofitClient;
+import edu.upc.dsa.andoroid_dsa.models.Gadget;
 import edu.upc.dsa.andoroid_dsa.models.UserInformation;
+import retrofit2.Call;
 
-public class YourProfileActivity extends AppCompatActivity {
+public class YourProfileActivity extends AppCompatActivity implements RecycleClickViewListener{
+    public String idUser;
     public String username;
     public String surname;
     public String birthday;
     public String email;
     public String password;
     public String coins;
+    private RecyclerView recyclerViewGadgets;
+    private RecyclerViewAdapter adapterGadgets;
+    Api APIservice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +41,18 @@ public class YourProfileActivity extends AppCompatActivity {
         setContentView(R.layout.your_profile_main);
         this.getVariables();
         this.updateLabels();
+        this.getUserIdFromDashboard();
+        recyclerViewGadgets=(RecyclerView)findViewById(R.id.recyclerGadgetYourProfile);
+        Log.d("DDDD", ""+recyclerViewGadgets);
+        recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
+        APIservice = RetrofitClient.getInstance().getMyApi();
+        Call<List<Gadget>> call = APIservice.purchasedGadgets(this.idUser);
+        try {
+            adapterGadgets = new RecyclerViewAdapter(call.execute().body(), this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        recyclerViewGadgets.setAdapter(adapterGadgets);
     }
     public void updateLabels(){
         String updateTitle =getString(R.string.updating_title);
@@ -71,5 +98,15 @@ public class YourProfileActivity extends AppCompatActivity {
     public void Return(View view){
         Intent intentRegister = new Intent(YourProfileActivity.this, DashBoardActivity.class);
         YourProfileActivity.this.startActivity(intentRegister);
+    }
+    public void getUserIdFromDashboard(){
+        SharedPreferences sharedPreferences = getSharedPreferences("userId", Context.MODE_PRIVATE);
+        this.idUser = sharedPreferences.getString("userId", null).toString();
+    }
+
+    @Override
+    public void recyclerViewListClicked(int position) {
+
+
     }
 }

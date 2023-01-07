@@ -135,7 +135,6 @@
                     android:textAlignment="center"
                     android:id="@+id/cost_Gadget"
                     android:text="@string/updating_cost"/>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -193,6 +192,7 @@
         android:textColor="@color/green_vibrant"
         android:textSize="25sp"
         android:textStyle="bold" />
+
 
 
 </RelativeLayout>

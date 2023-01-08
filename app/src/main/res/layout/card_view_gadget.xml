@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="150dp"
+    android:backgroundTint="@color/pastelGreen"
     >
 
     <RelativeLayout
@@ -23,6 +24,11 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/imgGadget"
+            android:fontFamily="@font/moon_dance"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
             android:text="TextView" />
 
         <TextView
@@ -32,6 +38,11 @@
             android:layout_below="@+id/idGadget"
             android:layout_alignLeft="@+id/idGadget"
             android:text="TextView"
+            android:fontFamily="@font/moon_dance"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
 
             />
 
@@ -41,7 +52,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/costGadget"
             android:layout_alignLeft="@+id/costGadget"
-            android:text="TextView" />
+            android:text="TextView"
+            android:fontFamily="@font/moon_dance"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="25dp"/>
 
         <View
             android:id="@+id/linea"

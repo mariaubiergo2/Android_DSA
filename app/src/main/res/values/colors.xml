@@ -14,4 +14,8 @@
     <color name="green_vibrant">#ddea58</color>
     <color name="pinky_vibrant">#ff68a3</color>
     <color name="transparency">#70FF0000</color>
+
+    <color name="pergamino">#ffd76f</color>
+    <color name="pastelGreen">#e5efbb</color>
+
 </resources>

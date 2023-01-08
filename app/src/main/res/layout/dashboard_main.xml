@@ -255,7 +255,7 @@
         android:layout_marginBottom="680dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:fontFamily="@font/play_regular"
-        android:onClick="returnFunction"
+        android:onClick="logOut"
         android:text="←"
         android:textColor="@color/green_vibrant"
         android:textSize="30sp"

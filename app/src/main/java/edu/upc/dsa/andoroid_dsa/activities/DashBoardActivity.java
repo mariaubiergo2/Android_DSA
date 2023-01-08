@@ -127,4 +127,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         editor.apply();
     }
 
+    public void logOut(View view) {
+        Intent intentRegister = new Intent(DashBoardActivity.this, LogInActivity.class);
+        DashBoardActivity.this.startActivity(intentRegister);
+    }
 }

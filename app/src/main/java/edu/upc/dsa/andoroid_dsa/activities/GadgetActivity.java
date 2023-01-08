@@ -4,6 +4,8 @@ import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.SHARED_PREFS;
 import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.TEXT1;
 import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.TEXT2;
 
+
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +17,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.List;
@@ -42,6 +46,7 @@ public class GadgetActivity extends AppCompatActivity implements RecycleClickVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gadget_shop_activity);
         this.getUserIdFromDashboard();
+
         //recyclerViewGadgets= new RecyclerView(this);
         recyclerViewGadgets=(RecyclerView)findViewById(R.id.recyclerGadget);
         Log.d("DDDD", ""+recyclerViewGadgets);

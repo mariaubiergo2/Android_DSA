@@ -7,23 +7,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.RetrofitClient;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
-import edu.upc.dsa.andoroid_dsa.models.UserInformation;
 import retrofit2.Call;
 
-public class YourProfileActivity extends AppCompatActivity implements RecycleClickViewListener{
+public class YourProfileActivity extends AppCompatActivity{
     public String idUser;
     public String username;
     public String surname;
@@ -31,6 +29,7 @@ public class YourProfileActivity extends AppCompatActivity implements RecycleCli
     public String email;
     public String password;
     public String coins;
+    public List<Gadget> gadgetsOfTheUser;
     private RecyclerView recyclerViewGadgets;
     private RecyclerViewAdapter adapterGadgets;
     Api APIservice;
@@ -42,17 +41,20 @@ public class YourProfileActivity extends AppCompatActivity implements RecycleCli
         this.getVariables();
         this.updateLabels();
         this.getUserIdFromDashboard();
-        recyclerViewGadgets=(RecyclerView)findViewById(R.id.recyclerGadgetYourProfile);
-        Log.d("DDDD", ""+recyclerViewGadgets);
-        recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerViewGadgets=(RecyclerView)findViewById(R.id.recyclerGadgetYourProfile);
+        //Log.d("DDDD", ""+recyclerViewGadgets);
+        //recyclerViewGadgets.setLayoutManager(new LinearLayoutManager(this));
         APIservice = RetrofitClient.getInstance().getMyApi();
         Call<List<Gadget>> call = APIservice.purchasedGadgets(this.idUser);
+
         try {
-            adapterGadgets = new RecyclerViewAdapter(call.execute().body(), this);
+            this.gadgetsOfTheUser=call.execute().body();
+            //adapterGadgets = new RecyclerViewAdapter(call.execute().body(), this);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        recyclerViewGadgets.setAdapter(adapterGadgets);
+        //recyclerViewGadgets.setAdapter(adapterGadgets);
+
     }
     public void updateLabels(){
         String updateTitle =getString(R.string.updating_title);
@@ -104,9 +106,22 @@ public class YourProfileActivity extends AppCompatActivity implements RecycleCli
         this.idUser = sharedPreferences.getString("userId", null).toString();
     }
 
-    @Override
-    public void recyclerViewListClicked(int position) {
-
-
+    public void openGadgetsOfUser(View view){
+        if(this.gadgetsOfTheUser==null){
+            Toast.makeText(YourProfileActivity.this,"You have not bought any gadgets, go to the shop!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Intent intent =new Intent(YourProfileActivity.this, GadgetsOfTheUser.class);
+        this.saveUserIdAndName(this.idUser,this.username);
+        this.startActivity(intent);
+    }
+    public void saveUserIdAndName(String userId, String username){
+        SharedPreferences sharedPreferences= getSharedPreferences("userIdAndUsername", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("userId", userId);
+        editor.putString("name",username);
+        Log.i("SAVING: ",userId);
+        Log.i("SAVING: ",username);
+        editor.apply();
     }
 }

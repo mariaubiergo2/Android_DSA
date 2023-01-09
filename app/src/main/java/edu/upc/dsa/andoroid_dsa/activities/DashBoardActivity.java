@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.unity3d.player.UnityPlayerActivity;
 
 import java.io.IOException;
 
@@ -27,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
-    public CardView yourProfile, gadgetShop, logOut;
+    public CardView yourProfile, gadgetShop, logOut, runGame;
     public String userId;
     public String username;
     Api APIservice;
@@ -59,6 +60,10 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.returnBtn:
                 i=new Intent(this, PrincipalActivity.class);
+                startActivity(i);
+                break;
+            case R.id.run_game:
+                i=new Intent(this, UnityPlayerActivity.class);
                 startActivity(i);
                 break;
         }
@@ -99,8 +104,11 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     public void getCardViewsReady(){
         yourProfile=(CardView) findViewById(R.id.profiles);
         gadgetShop=(CardView) findViewById(R.id.gadgetCard);
+        runGame=(CardView) findViewById(R.id.run_card);
         yourProfile.setOnClickListener(this);
         gadgetShop.setOnClickListener(this);
+        runGame.setOnClickListener(this);
+
     }
     public void saveVariables(UserInformation userInformation) {
         SharedPreferences sharedPreferences= getSharedPreferences("userInformation", Context.MODE_PRIVATE);

@@ -206,6 +206,7 @@
                 android:padding="15dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/run_card"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     app:cardBackgroundColor="@color/black"

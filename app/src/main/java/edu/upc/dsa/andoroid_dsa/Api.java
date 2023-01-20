@@ -48,8 +48,8 @@ public interface Api {
     Call<Void> deleteGadgetFromPurchase(@Body Purchase purchase);
     @POST("shop/user/chat/newMessage")
     Call<Void> newMessage(@Body ChatMessage chatMessage);
-    @GET("shop/user/chat/all")
-    Call<List<ChatMessage>> getChat();
+    @GET("shop/user/chat/{num}")
+    Call<List<ChatMessage>> getChat(@Path("num") Integer num);
     @POST("shop/issue")
     Call<Void> postAbuse(@Body Abuse newAbuse);
 

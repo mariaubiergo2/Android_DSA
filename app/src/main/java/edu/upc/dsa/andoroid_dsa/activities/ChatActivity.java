@@ -14,43 +14,46 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
-import org.w3c.dom.Text;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.RetrofitClient;
 import edu.upc.dsa.andoroid_dsa.models.ChatMessage;
-import edu.upc.dsa.andoroid_dsa.models.Gadget;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ChatActivity extends AppCompatActivity {
     Api APIservice;
+
     String name;
+    Integer num;
+
     TableLayout tableChat;
-    TextInputEditText newMessage;
-    Integer numberRows;
+    TextInputEditText messageInput;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_forum_users);
-        this.getVariables();
-        APIservice = RetrofitClient.getInstance().getMyApi();
-        Call<List<ChatMessage>> call = APIservice.getChat();
         this.tableChat=(TableLayout) findViewById(R.id.layoutChats);
-        try {
-            setChats(call.execute().body());
+        this.messageInput =(TextInputEditText) findViewById(R.id.messageGamer);
+        this.getVariables();
+        this.num = 0;
 
+        APIservice = RetrofitClient.getInstance().getMyApi();
+
+        Call<List<ChatMessage>> call = APIservice.getChat(this.num);
+
+        try {
+            buildTable(call.execute().body());
         }
         catch(IOException e){
             e.printStackTrace();
-
         }
-
     }
 
     public void getVariables() {
@@ -58,69 +61,74 @@ public class ChatActivity extends AppCompatActivity {
         this.name = sharedPreferences.getString("username", null).toString();
     }
 
-    public void postMessage(View view) {
-        APIservice = RetrofitClient.getInstance().getMyApi();
-        this.newMessage=(TextInputEditText) findViewById(R.id.messageGamer);
-        ChatMessage chatMessage =new ChatMessage(this.name,this.newMessage.getText().toString());
-        Call<Void> call = APIservice.newMessage(chatMessage);
-        call.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                switch (response.code()){
-                    case 201:
-                        Snackbar snaky201 = Snackbar.make(view, "The message has been done correctly! Update the forum to see it", 3000);
-                        snaky201.show();
-                        break;
-                    case 403:
-                        Snackbar snaky403 = Snackbar.make(view, "Database error when reporting issue", 3000);
-                        snaky403.show();
-                        break;
-                    case 500:
-                        Snackbar snaky500 = Snackbar.make(view, "The name has not been set successfully", 3000);
-                        snaky500.show();
-                        break;
-                }
-            }
+    private void buildTable(List<ChatMessage> messages) {
+        assert messages != null;
 
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                Snackbar snakyfail = Snackbar.make(view, "NETWORK FAILURE", 3000);
-                snakyfail.show();
-            }
-        });
+        for (ChatMessage message : messages) {
+            View tableRow = LayoutInflater.from(this).inflate(R.layout.message_gamer, null, false);
+
+            TextView playerUsername = tableRow.findViewById(R.id.gamerName);
+            TextView messageSent = tableRow.findViewById(R.id.gamerMessage);
+
+            playerUsername.setText(message.getName());
+            messageSent.setText(message.getMessage());
+
+            tableChat.addView(tableRow);
+        }
+        this.num += messages.size();
+    }
+
+    public void postMessage(View view) {
+        if(!messageInput.getText().toString().equals("")){
+            ChatMessage chatMessage =new ChatMessage(this.name,this.messageInput.getText().toString());
+            Call<Void> call = APIservice.newMessage(chatMessage);
+            call.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> call, Response<Void> response) {
+                    switch (response.code()){
+                        case 201:
+                            Snackbar snaky201 = Snackbar.make(view, "The message has been done correctly! Update the forum to see it", 3000);
+                            snaky201.show();
+                            break;
+                        case 403:
+                            Snackbar snaky403 = Snackbar.make(view, "Database error when reporting issue", 3000);
+                            snaky403.show();
+                            break;
+                        case 500:
+                            Snackbar snaky500 = Snackbar.make(view, "The name has not been set successfully", 3000);
+                            snaky500.show();
+                            break;
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Void> call, Throwable t) {
+                    Snackbar snakyfail = Snackbar.make(view, "NETWORK FAILURE", 3000);
+                    snakyfail.show();
+                }
+            });
+            ArrayList<ChatMessage> messages = new ArrayList<>();
+            messages.add(new ChatMessage(this.name, messageInput.getText().toString()));
+            buildTable(messages);
+        }
     }
 
     public void updateChat(View view) {
-        APIservice = RetrofitClient.getInstance().getMyApi();
-        Call<List<ChatMessage>> call = APIservice.getChat();
-        this.tableChat=(TableLayout) findViewById(R.id.layoutChats);
-        try {
-            setChats(call.execute().body());
-        }
-        catch(IOException e){
-            e.printStackTrace();
-
-        }
+        updateTable();
     }
 
     public void goBackToDashBoardActivity(View view) {
         Intent intent=new Intent(ChatActivity.this, DashBoardActivity.class);
         startActivity(intent);
     }
-    public void setChats(List<ChatMessage> chats){
-        if(chats==null){
-            return;
-        }
-        for (ChatMessage message : chats) {
-            View tableRow = LayoutInflater.from(this).inflate(R.layout.message_gamer, null, false);
 
-            TextView gamer = tableRow.findViewById(R.id.gamerName);
-            TextView gamerMessage = tableRow.findViewById(R.id.gamerMessage);
-            gamer.setText(message.getName());
-            gamerMessage.setText(message.getMessage());
-            this.tableChat.addView(tableRow);
+    private void updateTable() {
+        Call<List<ChatMessage>> call = APIservice.getChat(this.num);
+        try {
+            buildTable(call.execute().body());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-
 }
 

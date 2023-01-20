@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-//import com.squareup.picasso.Picasso;
-
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -18,7 +16,7 @@ import java.util.List;
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+public class RecyclerViewAdapterGadgetsOwned extends RecyclerView.Adapter<RecyclerViewAdapterGadgetsOwned.ViewHolder>{
     private static RecycleClickViewListener listener;
     public List<Gadget> gadgets;
 
@@ -31,10 +29,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            id=(TextView)itemView.findViewById(R.id.idGadget);
-            cost=(TextView)itemView.findViewById(R.id.costGadget);
-            description=(TextView)itemView.findViewById(R.id.descriptionGadget);
-            fotoGadget=(ImageView) itemView.findViewById(R.id.imgGadget);
+            id=(TextView)itemView.findViewById(R.id.idGadgetOwned);
+            cost=(TextView)itemView.findViewById(R.id.costGadgetOwned);
+            description=(TextView)itemView.findViewById(R.id.descriptionGadgetOwned);
+            fotoGadget=(ImageView) itemView.findViewById(R.id.imgGadgetOwned);
             itemView.setOnClickListener(this);
         }
         @Override
@@ -43,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
-    public RecyclerViewAdapter(List<Gadget> gadgets, RecycleClickViewListener listener) {
+    public RecyclerViewAdapterGadgetsOwned(List<Gadget> gadgets, RecycleClickViewListener listener) {
         this.gadgets = gadgets;
         this.listener =listener;
     }
@@ -51,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_gadget,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_gadget_owned,parent,false);
         ViewHolder viewHolder= new ViewHolder(view);
         return viewHolder;
     }

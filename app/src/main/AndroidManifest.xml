@@ -111,6 +111,56 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".activities.UpdateOfUserInformation"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Andoroid_DSA.NoActionBar">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.RankingActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Andoroid_DSA.NoActionBar">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.DeletePurchaseGadget"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Andoroid_DSA.NoActionBar">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.ChatActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Andoroid_DSA.NoActionBar">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.AbuseActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Andoroid_DSA.NoActionBar">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
 
     </application>

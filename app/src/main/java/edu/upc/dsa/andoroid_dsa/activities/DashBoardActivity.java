@@ -14,13 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.unity3d.player.UnityPlayerActivity;
 
 import java.io.IOException;
 
 import edu.upc.dsa.andoroid_dsa.Api;
 import edu.upc.dsa.andoroid_dsa.R;
 import edu.upc.dsa.andoroid_dsa.RetrofitClient;
+import edu.upc.dsa.andoroid_dsa.models.Abuse;
 import edu.upc.dsa.andoroid_dsa.models.UserId;
 import edu.upc.dsa.andoroid_dsa.models.UserInformation;
 import retrofit2.Call;
@@ -28,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
-    public CardView yourProfile, gadgetShop, logOut, runGame;
+    public CardView yourProfile, gadgetShop, rankingCard, chatCard, abuseCard;
     public String userId;
     public String username;
     Api APIservice;
@@ -62,8 +62,17 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 i=new Intent(this, PrincipalActivity.class);
                 startActivity(i);
                 break;
-            case R.id.run_game:
-                i=new Intent(this, UnityPlayerActivity.class);
+            case R.id.rankingCard:
+                i=new Intent(this, RankingActivity.class);
+                startActivity(i);
+                break;
+            case R.id.chatCard:
+                i=new Intent(this, ChatActivity.class);
+                this.saveNameForChat();
+                startActivity(i);
+                break;
+            case R.id.abuseCard:
+                i=new Intent(this, AbuseActivity.class);
                 startActivity(i);
                 break;
         }
@@ -104,11 +113,14 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     public void getCardViewsReady(){
         yourProfile=(CardView) findViewById(R.id.profiles);
         gadgetShop=(CardView) findViewById(R.id.gadgetCard);
-        runGame=(CardView) findViewById(R.id.run_card);
+        rankingCard=(CardView) findViewById(R.id.rankingCard);
+        chatCard=(CardView) findViewById(R.id.chatCard);
+        abuseCard=(CardView) findViewById(R.id.abuseCard);
         yourProfile.setOnClickListener(this);
         gadgetShop.setOnClickListener(this);
-        runGame.setOnClickListener(this);
-
+        rankingCard.setOnClickListener(this);
+        chatCard.setOnClickListener(this);
+        abuseCard.setOnClickListener(this);
     }
     public void saveVariables(UserInformation userInformation) {
         SharedPreferences sharedPreferences= getSharedPreferences("userInformation", Context.MODE_PRIVATE);
@@ -138,5 +150,12 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     public void logOut(View view) {
         Intent intentRegister = new Intent(DashBoardActivity.this, LogInActivity.class);
         DashBoardActivity.this.startActivity(intentRegister);
+    }
+    public void saveNameForChat(){
+        SharedPreferences sharedPreferences= getSharedPreferences("nameForChat", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("username", this.username);
+        Log.i("SAVING: ",this.username);
+        editor.apply();
     }
 }

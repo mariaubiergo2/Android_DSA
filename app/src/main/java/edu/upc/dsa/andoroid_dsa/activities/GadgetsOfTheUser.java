@@ -28,6 +28,7 @@ public class GadgetsOfTheUser extends AppCompatActivity implements RecycleClickV
     Api APIservice;
     String idUser;
     String name;
+    String email;
     private RecyclerView recyclerViewGadgets;
     private RecyclerViewAdapter adapterGadgets;
 
@@ -53,12 +54,17 @@ public class GadgetsOfTheUser extends AppCompatActivity implements RecycleClickV
 
     @Override
     public void recyclerViewListClicked(int position) {
+        Gadget gadget=adapterGadgets.gadgets.get(position);
+        Intent intent=new Intent(GadgetsOfTheUser.this,DeletePurchaseGadget.class);
+        saveVariables(gadget, this.idUser);
+        this.startActivity(intent);
 
     }
     public void getUserIdFromPreviousActivity(){
-        SharedPreferences sharedPreferences = getSharedPreferences("userIdAndUsername", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("userIdAndInformation", Context.MODE_PRIVATE);
         this.idUser = sharedPreferences.getString("userId", null).toString();
         this.name = sharedPreferences.getString("name", null).toString();
+        this.email = sharedPreferences.getString("email", null).toString();
     }
     public void updateLabel(){
         String update_title =getString(R.string.updating_title_user);
@@ -70,4 +76,14 @@ public class GadgetsOfTheUser extends AppCompatActivity implements RecycleClickV
         Intent intentRegister = new Intent(GadgetsOfTheUser.this, YourProfileActivity.class);
         GadgetsOfTheUser.this.startActivity(intentRegister);
     }
+    public void saveVariables(Gadget gadgetClicked, String userId) {
+        SharedPreferences sharedPreferences= getSharedPreferences("gadgetItemToDelete", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("idGadget", gadgetClicked.getIdGadget());
+        editor.putString("descriptionGadget", gadgetClicked.getDescription());
+        editor.putString("costGadget",String.valueOf(gadgetClicked.getCost()));
+        editor.putString("idUser", userId);
+        editor.apply();
+    }
+
 }

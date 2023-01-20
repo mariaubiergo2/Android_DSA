@@ -27,4 +27,7 @@
     <string name="updating_title_gadget">updating_title_gadget</string>
     <string name="updating_coins">updating_coins</string>
     <string name="updating_title_user">updating_title_user</string>
+    <string name="updating_top1">updating_top1</string>
+    <string name="updating_top2">updating_top2</string>
+    <string name="updating_top3">updating_top3</string>
 </resources>

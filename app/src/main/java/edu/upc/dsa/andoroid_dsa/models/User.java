@@ -1,5 +1,7 @@
 package edu.upc.dsa.andoroid_dsa.models;
 
+import java.util.Random;
+
 public class User {
 
     private String name;
@@ -14,15 +16,24 @@ public class User {
 
     private int coins;
 
+    private int experience;
+
+    private String profilePicture;
+
+
     public User(){}
 
-    public User(String name, String surname, String birthday, String email, String password,int coins){
+    public User(String name, String surname, String birthday, String email, String password,int coins,int experience, String profilePicture){
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
         this.email = email;
         this.password = password;
         this.coins=coins;
+        //Random rnd=new Random();
+        //this.experience= rnd.nextInt(100);
+        this.experience=experience;
+        this.profilePicture=profilePicture;
     }
 
     public String getName() {
@@ -71,5 +82,18 @@ public class User {
 
     public void setCoins(int coins) {
         this.coins = coins;
+    }
+    public void setExperience(int experience){
+        this.experience=experience;
+
+    }
+    public int getExperience(){
+        return this.experience;
+    }
+    public String getProfilePicture(){
+        return this.profilePicture;
+    }
+    public void setProfilePicture(String profilePicture){
+        this.profilePicture=profilePicture;
     }
 }

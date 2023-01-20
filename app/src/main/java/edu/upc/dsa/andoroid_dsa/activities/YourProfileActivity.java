@@ -112,14 +112,21 @@ public class YourProfileActivity extends AppCompatActivity{
             return;
         }
         Intent intent =new Intent(YourProfileActivity.this, GadgetsOfTheUser.class);
-        this.saveUserIdAndName(this.idUser,this.username);
+        this.saveUserIdAndName(this.idUser,this.username, this.email);
         this.startActivity(intent);
     }
-    public void saveUserIdAndName(String userId, String username){
-        SharedPreferences sharedPreferences= getSharedPreferences("userIdAndUsername", Context.MODE_PRIVATE);
+    public void openUpdateOfUser(View view){
+        Intent intent=new Intent(YourProfileActivity.this, UpdateOfUserInformation.class);
+        this.saveUserIdAndName(this.idUser,this.username,this.email);
+        startActivity(intent);
+
+    }
+    public void saveUserIdAndName(String userId, String username, String email){
+        SharedPreferences sharedPreferences= getSharedPreferences("userIdAndInformation", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor =sharedPreferences.edit();
         editor.putString("userId", userId);
         editor.putString("name",username);
+        editor.putString("email",email);
         Log.i("SAVING: ",userId);
         Log.i("SAVING: ",username);
         editor.apply();

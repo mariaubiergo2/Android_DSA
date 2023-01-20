@@ -28,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
-    public CardView yourProfile, gadgetShop, rankingCard, chatCard, abuseCard;
+    public CardView yourProfile, gadgetShop, rankingCard, chatCard, abuseCard, faqsCard;
     public String userId;
     public String username;
     Api APIservice;
@@ -75,6 +75,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 i=new Intent(this, AbuseActivity.class);
                 startActivity(i);
                 break;
+            case R.id.faqsCard:
+                break;
         }
     }
     public void getUserById(String userId){
@@ -116,11 +118,14 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         rankingCard=(CardView) findViewById(R.id.rankingCard);
         chatCard=(CardView) findViewById(R.id.chatCard);
         abuseCard=(CardView) findViewById(R.id.abuseCard);
+        faqsCard=(CardView) findViewById(R.id.faqsCard);
+
         yourProfile.setOnClickListener(this);
         gadgetShop.setOnClickListener(this);
         rankingCard.setOnClickListener(this);
         chatCard.setOnClickListener(this);
         abuseCard.setOnClickListener(this);
+        faqsCard.setOnClickListener(this);
     }
     public void saveVariables(UserInformation userInformation) {
         SharedPreferences sharedPreferences= getSharedPreferences("userInformation", Context.MODE_PRIVATE);
@@ -131,12 +136,14 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         editor.putString("email",userInformation.getEmail());
         editor.putString("password",userInformation.getPassword());
         editor.putString("coins",Integer.toString(userInformation.getCoins()));
+        editor.putString("profilePicture", userInformation.getProfilePicture());
         Log.i("SAVING: ",userInformation.getName());
         Log.i("SAVING: ",userInformation.getSurname());
         Log.i("SAVING: ",userInformation.getBirthday());
         Log.i("SAVING: ",userInformation.getEmail());
         Log.i("SAVING: ",userInformation.getPassword());
         Log.i("SAVING. ",Integer.toString(userInformation.getCoins()));
+        Log.i("SAVING: ",userInformation.getProfilePicture());
         editor.apply();
     }
     public void saveUserId(String userId){

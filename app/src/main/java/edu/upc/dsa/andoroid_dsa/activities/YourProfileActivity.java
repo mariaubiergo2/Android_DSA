@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.List;
@@ -29,6 +32,8 @@ public class YourProfileActivity extends AppCompatActivity{
     public String email;
     public String password;
     public String coins;
+    public String urlPicture;
+    public ImageView profilePicture;
     public List<Gadget> gadgetsOfTheUser;
     private RecyclerView recyclerViewGadgets;
     private RecyclerViewAdapter adapterGadgets;
@@ -49,6 +54,7 @@ public class YourProfileActivity extends AppCompatActivity{
 
         try {
             this.gadgetsOfTheUser=call.execute().body();
+
             //adapterGadgets = new RecyclerViewAdapter(call.execute().body(), this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,10 +63,6 @@ public class YourProfileActivity extends AppCompatActivity{
 
     }
     public void updateLabels(){
-        String updateTitle =getString(R.string.updating_title);
-        updateTitle=this.username+" !";
-        EditText editorTitle = (EditText) findViewById (R.id.title_profile);
-        editorTitle.setText(updateTitle);
         String updateUsername =getString(R.string.updating_username);
         updateUsername=this.username;
         EditText editorUsername = (EditText) findViewById (R.id.user_name);
@@ -85,6 +87,8 @@ public class YourProfileActivity extends AppCompatActivity{
         update_coins=this.coins;
         EditText editor_coins = (EditText) findViewById(R.id.co_ins);
         editor_coins.setText(update_coins);
+        this.profilePicture=findViewById(R.id.yourProfilePicture);
+        Picasso.get().load(this.urlPicture).resize(350,350).into(profilePicture);
     }
 
     public void getVariables() {
@@ -95,6 +99,7 @@ public class YourProfileActivity extends AppCompatActivity{
         this.email = sharedPreferences.getString("email", null).toString();
         this.password = sharedPreferences.getString("password", null).toString();
         this.coins=sharedPreferences.getString("coins",null).toString();
+        this.urlPicture=sharedPreferences.getString("profilePicture",null).toString();
     }
 
     public void Return(View view){

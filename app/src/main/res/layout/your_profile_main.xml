@@ -10,36 +10,13 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:orientation="vertical"
-        android:layout_marginTop="25dp">
-
-        <TextView
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:id="@+id/yourProfilePicture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/play_bold"
-            android:text="Welcome,"
-            android:textAlignment="center"
-            android:textColor="@color/green_vibrant"
-            android:textSize="40sp"
-            android:textStyle="bold"></TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:orientation="vertical"
-        android:layout_marginTop="70dp">
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:inputType="text"
-            android:textStyle="bold"
-            android:textColor="@color/green_vibrant"
-            android:fontFamily="@font/play_bold"
-            android:textSize="40sp"
-            android:textAlignment="center"
-            android:id="@+id/title_profile"
-            android:text="@string/updating_title"/>
+            android:layout_gravity="center">
+        </ImageView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

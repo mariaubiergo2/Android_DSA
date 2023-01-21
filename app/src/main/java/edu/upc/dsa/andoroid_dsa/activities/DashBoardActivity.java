@@ -76,6 +76,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(i);
                 break;
             case R.id.faqsCard:
+                i=new Intent(this, FAQsActivity.class);
+                startActivity(i);
                 break;
         }
     }

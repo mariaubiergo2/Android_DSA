@@ -7,6 +7,7 @@ import java.util.List;
 import edu.upc.dsa.andoroid_dsa.models.Abuse;
 import edu.upc.dsa.andoroid_dsa.models.ChatMessage;
 import edu.upc.dsa.andoroid_dsa.models.Credentials;
+import edu.upc.dsa.andoroid_dsa.models.FAQ;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
 import edu.upc.dsa.andoroid_dsa.models.PasswordChangeRequirements;
 import edu.upc.dsa.andoroid_dsa.models.Purchase;
@@ -36,23 +37,31 @@ public interface Api {
 
     @PUT("shop/gadget/buy/{idGadget}/{idUser}")
     Call<Void> buyAGadget(@Path("idGadget") String idGadget,@Path("idUser") String idUser);
+
     @GET("shop/purchase/{idUser}")
     Call<List<Gadget>> purchasedGadgets(@Path("idUser") String idUser);
+
     @GET("shop/gadget/{idGadget}")
     Call<Gadget> getGadget(@Path("idUser") String idGadget);
+
     @PUT("shop/user/update")
     Call<Void> updateUserPassword(@Body PasswordChangeRequirements passwordChangeRequirements);
+
     @GET("shop/user/allOrdered")
     Call<List<User>> rankingOfUsers();
+
     @PUT("shop/user/deletePurchase")
     Call<Void> deleteGadgetFromPurchase(@Body Purchase purchase);
+
     @POST("shop/user/chat/newMessage")
     Call<Void> newMessage(@Body ChatMessage chatMessage);
+
     @GET("shop/user/chat/{num}")
     Call<List<ChatMessage>> getChat(@Path("num") Integer num);
+
     @POST("shop/issue")
     Call<Void> postAbuse(@Body Abuse newAbuse);
 
-
-
+    @GET("shop/FAQs")
+    Call<List<FAQ>> getFAQs();
 }

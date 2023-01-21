@@ -41,18 +41,19 @@
 
     <Button
         android:id="@+id/returnRegisterBtn"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="returnFunction"
-        android:text="←"
-        android:textStyle="bold"
-        android:textSize="30dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:fontFamily="@font/play_regular"
+        android:onClick="returnFunction"
+        android:text="←"
         android:textColor="@color/green_vibrant"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="3dp" />
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/newPasswordInput"

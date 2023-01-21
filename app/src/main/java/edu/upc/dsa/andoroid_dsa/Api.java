@@ -11,6 +11,7 @@ import edu.upc.dsa.andoroid_dsa.models.FAQ;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
 import edu.upc.dsa.andoroid_dsa.models.PasswordChangeRequirements;
 import edu.upc.dsa.andoroid_dsa.models.Purchase;
+import edu.upc.dsa.andoroid_dsa.models.Question;
 import edu.upc.dsa.andoroid_dsa.models.User;
 import edu.upc.dsa.andoroid_dsa.models.UserId;
 import edu.upc.dsa.andoroid_dsa.models.UserInformation;
@@ -64,4 +65,7 @@ public interface Api {
 
     @GET("shop/FAQs")
     Call<List<FAQ>> getFAQs();
+
+    @POST("shop/user/question")
+    Call<Void> addQuestion(@Body Question question);
 }

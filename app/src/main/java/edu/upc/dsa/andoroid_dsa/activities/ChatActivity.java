@@ -87,7 +87,7 @@ public class ChatActivity extends AppCompatActivity {
                 public void onResponse(Call<Void> call, Response<Void> response) {
                     switch (response.code()){
                         case 201:
-                            Snackbar snaky201 = Snackbar.make(view, "The message has been done correctly! Update the forum to see it", 3000);
+                            Snackbar snaky201 = Snackbar.make(view, "The message has been done correctly!", 3000);
                             snaky201.show();
                             break;
                         case 403:

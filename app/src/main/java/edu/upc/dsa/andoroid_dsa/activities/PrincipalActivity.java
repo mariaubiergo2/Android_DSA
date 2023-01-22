@@ -1,5 +1,6 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
+import static com.google.firebase.messaging.Constants.MessageNotificationKeys.TAG;
 import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.SHARED_PREFS;
 import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.TEXT1;
 import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.TEXT2;
@@ -7,13 +8,19 @@ import static edu.upc.dsa.andoroid_dsa.activities.LogInActivity.TEXT2;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.Objects;
 import java.util.Timer;
@@ -39,6 +46,7 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal_main);
         loadData();
+        subscribeToFirebase();
 
         TimerTask t = new TimerTask() {
             @Override
@@ -61,5 +69,20 @@ public class PrincipalActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         text1 = sharedPreferences.getString( TEXT1,"" );
         text2 = sharedPreferences.getString( TEXT2,"" );
+    }
+
+    public void subscribeToFirebase() {
+        FirebaseMessaging.getInstance().subscribeToTopic("chat")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Subscribed";
+                        if (!task.isSuccessful()) {
+                            msg = "Subscribe failed";
+                        }
+                        Log.d(TAG, msg);
+                        Toast.makeText(PrincipalActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

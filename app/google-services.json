@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "104250917559",
+    "project_id": "backenddsa",
+    "storage_bucket": "backenddsa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104250917559:android:4cd38a82e229eb84934332",
+        "android_client_info": {
+          "package_name": "edu.upc.dsa.andoroid_dsa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104250917559-l6bcf49jgq37c4j7jsrku9cu7i346v3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKU9dcAYYkNS2sNMj3_SQ_DeYd1F1V-Rw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104250917559-l6bcf49jgq37c4j7jsrku9cu7i346v3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

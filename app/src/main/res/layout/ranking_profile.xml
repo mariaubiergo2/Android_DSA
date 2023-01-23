@@ -24,17 +24,18 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <TextView
+        android:id="@+id/titleRanking"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:inputType="text"
-        android:textStyle="bold"
-        android:textColor="@color/green_vibrant"
         android:fontFamily="@font/play_regular"
-        android:textSize="30sp"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text="@string/ranking_of_experience"
         android:textAlignment="center"
-        android:id="@+id/titleRanking"
-        android:text="RANKING OF EXPERIENCE"/>
+        android:textColor="@color/green_vibrant"
+        android:textSize="30sp"
+        android:textStyle="bold" />
     <LinearLayout
         android:id="@+id/linearWinner1"
         android:layout_width="match_parent"
@@ -47,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_regular"
-            android:text="TOP 1"
+            android:text="@string/top_1"
             android:layout_marginLeft="180dp"
             android:textColor="@color/green_vibrant"
             android:textSize="20sp"
@@ -85,12 +86,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_regular"
+            android:text="@string/updating_top1"
             android:textAlignment="center"
             android:textColor="@color/green_vibrant"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/updating_top1">
-        </EditText>
+            tools:ignore="TouchTargetSizeCheck"></EditText>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linearWinner2"
@@ -102,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_regular"
-            android:text="TOP 2"
+            android:text="@string/top_2"
             android:layout_marginLeft="180dp"
 
             android:textColor="@color/green_vibrant"
@@ -140,12 +141,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_regular"
+            android:text="@string/updating_top2"
             android:textAlignment="center"
             android:textColor="@color/green_vibrant"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/updating_top2">
-        </EditText>
+            tools:ignore="TouchTargetSizeCheck"></EditText>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linearWinner3"
@@ -157,7 +158,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_regular"
-            android:text="TOP 3"
+            android:text="@string/top_3"
             android:layout_marginLeft="180dp"
             android:textColor="@color/green_vibrant"
             android:textSize="20sp"
@@ -177,7 +178,7 @@
             android:background="@drawable/img_circle"
             app:layout_constraintTop_toBottomOf="@+id/textTop3"
             android:layout_marginLeft="171dp"
-            android:contentDescription="Third position!">
+            android:contentDescription="@string/third_position">
         </ImageView>
     </LinearLayout>
     <LinearLayout
@@ -192,12 +193,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_regular"
+            android:text="@string/updating_top3"
             android:textAlignment="center"
             android:textColor="@color/green_vibrant"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="@string/updating_top3">
-        </EditText>
+            tools:ignore="TouchTargetSizeCheck"></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -207,7 +208,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Whole classification"
+            android:text="@string/whole_classification"
             android:onClick="seeAllClassification"
             android:backgroundTint="@color/cardview_shadow_end_color"
             android:fontFamily="@font/play_regular"

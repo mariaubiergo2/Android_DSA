@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/play_regular"
-            android:text="Hi there, "
+            android:text="@string/hi_there"
             android:textAlignment="center"
             android:textColor="@color/green_vibrant"
             android:textSize="40sp"
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Acces to your profile!"
+                    android:text="@string/acces_to_your_profile"
                     android:textColor="@color/green_vibrant"
                     android:textSize="15sp">
 
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Gadget Shop"
+                    android:text="@string/gadget_shop"
                     android:textColor="@color/green_vibrant"
                     android:textStyle="bold"
                     android:textSize="25sp" />
@@ -170,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Buy some gadgets!"
+                    android:text="@string/buy_some_gadgets"
                     android:textColor="@color/green_vibrant"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_bold"
                     android:lines="1"
-                    android:text="START PLAYING"
+                    android:text="@string/start_playing"
                     android:textAlignment="center"
                     android:textColor="@color/green_vibrant"
                     android:textStyle="bold"
@@ -236,7 +236,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Can you save the witcher?"
+                    android:text="@string/can_you_save_the_witcher"
                     android:textAlignment="center"
                     android:textColor="@color/green_vibrant"
                     android:textStyle="italic"
@@ -295,7 +295,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Ranking"
+                    android:text="@string/ranking"
                     android:textColor="@color/green_vibrant"
                     android:textStyle="bold"
                     android:textSize="25sp" />
@@ -305,9 +305,10 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Who is the best player?"
+                    android:text="@string/who_is_the_best_player"
                     android:textColor="@color/green_vibrant"
-                    android:textSize="15sp">
+                    android:textSize="15sp"
+                    tools:ignore="TextContrastCheck">
 
                 </TextView>
 
@@ -361,7 +362,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Chat forum"
+                    android:text="@string/chat_forum"
                     android:textColor="@color/green_vibrant"
                     android:textStyle="bold"
                     android:textSize="25sp" />
@@ -371,7 +372,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="See the community"
+                    android:text="@string/see_the_community"
                     android:textColor="@color/green_vibrant"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -427,7 +428,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Report abuse"
+                    android:text="@string/report_abuse"
                     android:textColor="@color/green_vibrant"
                     android:textStyle="bold"
                     android:textSize="25sp" />
@@ -437,7 +438,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Any issue to report?"
+                    android:text="@string/any_issue_to_report"
                     android:textColor="@color/green_vibrant"
                     android:textSize="15sp">
 
@@ -493,7 +494,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="FAQs"
+                    android:text="@string/faqs"
                     android:textColor="@color/green_vibrant"
                     android:textStyle="bold"
                     android:textSize="25sp" />
@@ -503,7 +504,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/play_regular"
                     android:lines="1"
-                    android:text="Any questions?"
+                    android:text="@string/any_questions"
                     android:textColor="@color/green_vibrant"
                     android:textSize="15sp" />
             </LinearLayout>

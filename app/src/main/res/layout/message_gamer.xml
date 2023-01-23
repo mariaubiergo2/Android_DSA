@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.09"
-        android:text="Player"
+        android:text="@string/player"
         android:textColor="@color/black"
         android:textStyle="bold|italic" />
 
@@ -19,7 +19,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.24"
-        android:text="Message"
+        android:text="@string/message"
         android:textColor="@color/black" />
 
 </TableRow>

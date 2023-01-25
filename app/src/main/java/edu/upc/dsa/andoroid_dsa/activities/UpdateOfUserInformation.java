@@ -73,4 +73,9 @@ public class UpdateOfUserInformation extends AppCompatActivity {
             }
         });
     }
+
+    public void returnFunction(View view){
+        Intent intentRegister = new Intent(UpdateOfUserInformation.this, YourProfileActivity.class);
+        UpdateOfUserInformation.this.startActivity(intentRegister);
+    }
 }

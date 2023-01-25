@@ -111,6 +111,7 @@ public class ChatActivity extends AppCompatActivity {
             messages.add(new ChatMessage(this.name, messageInput.getText().toString()));
             buildTable(messages);
         }
+        this.messageInput.setText("");
     }
 
     public void updateChat(View view) {

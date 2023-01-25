@@ -24,11 +24,10 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp" />
 
-    <EditText
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:inputType="text"
         android:textStyle="bold"
         android:textColor="@color/green_vibrant"
         android:fontFamily="@font/play_regular"

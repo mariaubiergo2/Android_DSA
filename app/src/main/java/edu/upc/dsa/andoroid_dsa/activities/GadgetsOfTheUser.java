@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -69,7 +72,7 @@ public class GadgetsOfTheUser extends AppCompatActivity implements RecycleClickV
     public void updateLabel(){
         String update_title =getString(R.string.updating_title_user);
         update_title="Gadgets of "+this.name+" !";
-        EditText e = (EditText) findViewById (R.id.Edit_Title_Update1);
+        TextView e = (TextView) findViewById (R.id.Edit_Title_Update1);
         e.setText(update_title);
     }
     public void ReturnToProfile(View view){

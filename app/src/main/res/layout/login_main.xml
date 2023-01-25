@@ -67,17 +67,7 @@
         app:layout_constraintTop_toBottomOf="@id/textview_second"
         app:layout_constraintVertical_bias="0.668" />
 
-    <CheckBox
-        android:id="@+id/rememberBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/play_regular"
-        android:text="@string/remember_me"
-        android:textColor="@color/green_vibrant"
-        app:layout_constraintStart_toStartOf="@+id/passwordTxt"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTxt"
-        tools:ignore="TextContrastCheck" />
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/passwordTxt"
         android:layout_width="309dp"
@@ -113,8 +103,8 @@
 
     <TextView
         android:id="@+id/titleLogin"
-        android:layout_width="206dp"
-        android:layout_height="53dp"
+        android:layout_width="395dp"
+        android:layout_height="63dp"
         android:fontFamily="@font/play_bold"
         android:text="@string/login_main"
         android:textAlignment="center"
@@ -127,21 +117,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.559" />
 
-    <Button
-        android:id="@+id/returnBtn"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="680dp"
-        android:backgroundTint="@color/cardview_shadow_end_color"
-        android:fontFamily="@font/play_regular"
-        android:onClick="returnFunction"
-        android:text="←"
-        android:textColor="@color/green_vibrant"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,15 +63,6 @@ public class GadgetActivity extends AppCompatActivity implements RecycleClickVie
         }
         recyclerViewGadgets.setAdapter(adapterGadgets);
     }
-    public void btnClicked(View view) throws IOException {
-        SharedPreferences preferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor =preferences.edit();
-        editor.putString(TEXT1, "");
-        editor.putString(TEXT2, "");
-        editor.apply();
-        Intent intent = new Intent(GadgetActivity.this, MainActivity.class);
-        GadgetActivity.this.startActivity(intent);
-    }
 
     public void returnFunction(View view){
         Intent intentRegister = new Intent(GadgetActivity.this, DashBoardActivity.class);

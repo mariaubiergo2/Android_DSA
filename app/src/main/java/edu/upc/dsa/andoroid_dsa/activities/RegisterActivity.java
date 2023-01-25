@@ -74,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void returnFunction(View view){
-        Intent intentRegister = new Intent(RegisterActivity.this, MainActivity.class);
+        Intent intentRegister = new Intent(RegisterActivity.this, LogInActivity.class);
         RegisterActivity.this.startActivity(intentRegister);
     }
 }

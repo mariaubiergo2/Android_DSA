@@ -34,6 +34,7 @@
         android:textAlignment="center"
         android:textColor="@color/green_vibrant"
         android:textSize="25dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerGadget"
         android:layout_width="match_parent"

@@ -9,7 +9,6 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/informerInput"
-        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/green_vibrant"

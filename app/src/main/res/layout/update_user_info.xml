@@ -27,7 +27,6 @@
         android:id="@+id/updatePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
         android:backgroundTint="@color/cardview_shadow_start_color"
         android:fontFamily="@font/play_regular"
         android:onClick="updatePassword"
@@ -35,6 +34,7 @@
         android:textColor="@color/green_vibrant"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newPasswordInput"
         tools:ignore="MissingConstraints" />
@@ -72,9 +72,6 @@
         app:layout_constraintTop_toBottomOf="@+id/oldPasswordInput" />
 
 
-
-
-
     <TextView
         android:id="@+id/titlePasswordChange"
         android:layout_width="match_parent"
@@ -86,10 +83,9 @@
         android:textSize="43sp"
         app:layout_constraintBottom_toTopOf="@+id/oldPasswordInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

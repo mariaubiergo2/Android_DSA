@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.unity3d.player.UnityPlayerActivity;
 
 import java.io.IOException;
 
@@ -28,7 +29,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
-    public CardView yourProfile, gadgetShop, rankingCard, chatCard, abuseCard, faqsCard;
+    public CardView yourProfile, gadgetShop, rankingCard, chatCard, abuseCard, faqsCard, gameCard;
     public String userId;
     public String username;
     Api APIservice;
@@ -79,6 +80,10 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 i=new Intent(this, FAQsActivity.class);
                 startActivity(i);
                 break;
+            case R.id.gameCard:
+                i=new Intent(this, UnityPlayerActivity.class);
+                startActivity(i);
+                break;
         }
     }
     public void getUserById(String userId){
@@ -121,6 +126,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         chatCard=(CardView) findViewById(R.id.chatCard);
         abuseCard=(CardView) findViewById(R.id.abuseCard);
         faqsCard=(CardView) findViewById(R.id.faqsCard);
+        gameCard=(CardView) findViewById(R.id.gameCard);
 
         yourProfile.setOnClickListener(this);
         gadgetShop.setOnClickListener(this);
@@ -128,6 +134,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         chatCard.setOnClickListener(this);
         abuseCard.setOnClickListener(this);
         faqsCard.setOnClickListener(this);
+        gameCard.setOnClickListener(this);
     }
     public void saveVariables(UserInformation userInformation) {
         SharedPreferences sharedPreferences= getSharedPreferences("userInformation", Context.MODE_PRIVATE);

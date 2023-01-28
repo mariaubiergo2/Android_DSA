@@ -10,6 +10,7 @@ import edu.upc.dsa.andoroid_dsa.models.Credentials;
 import edu.upc.dsa.andoroid_dsa.models.FAQ;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
 import edu.upc.dsa.andoroid_dsa.models.PasswordChangeRequirements;
+import edu.upc.dsa.andoroid_dsa.models.ProfilePicture;
 import edu.upc.dsa.andoroid_dsa.models.Purchase;
 import edu.upc.dsa.andoroid_dsa.models.Question;
 import edu.upc.dsa.andoroid_dsa.models.User;
@@ -68,4 +69,7 @@ public interface Api {
 
     @POST("shop/user/question")
     Call<Void> addQuestion(@Body Question question);
+
+    @PUT("shop/user/updateProfilePicture")
+    Call<Void> updateProfilePicture(@Body ProfilePicture profilePicture);
 }

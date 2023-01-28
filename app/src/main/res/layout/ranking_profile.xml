@@ -20,15 +20,15 @@
         android:textColor="@color/green_vibrant"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/titleRanking"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="7dp" />
+
 
     <TextView
         android:id="@+id/titleRanking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/play_regular"
         android:inputType="text"
         android:minHeight="48dp"
@@ -37,12 +37,9 @@
         android:textColor="@color/green_vibrant"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textTop3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/returnBtn" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textTop1"
@@ -55,7 +52,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/FirstWinnerProfile"
         app:layout_constraintStart_toStartOf="@+id/FirstWinnerProfile"
-        app:layout_constraintTop_toTopOf="@+id/textTop3"></TextView>
+        app:layout_constraintTop_toTopOf="@+id/textTop3" />
 
 
     <ImageView
@@ -68,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/SecondWinnerProfile"
-        tools:ignore="NotSibling"></ImageView>
+        tools:ignore="NotSibling" />
 
     <TextView
         android:id="@+id/textTop2"
@@ -82,12 +79,12 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/SecondWinnerProfile"
         app:layout_constraintStart_toStartOf="@+id/SecondWinnerProfile"
-        app:layout_constraintTop_toTopOf="@+id/textTop3"></TextView>
+        app:layout_constraintTop_toTopOf="@+id/textTop3" />
 
     <ImageView
         android:id="@+id/SecondWinnerProfile"
-        android:layout_width="70dp"
-        android:layout_height="58dp"
+        android:layout_width="87dp"
+        android:layout_height="70dp"
         android:background="@drawable/img_circle"
         android:contentDescription="Second position!"
         app:layout_constraintBottom_toTopOf="@+id/textEditTop2"
@@ -95,37 +92,20 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/FirstWinnerProfile"
         app:layout_constraintTop_toBottomOf="@+id/textTop3"
-        tools:ignore="NotSibling"></ImageView>
+        tools:ignore="NotSibling" />
 
     <ImageView
         android:id="@+id/ThirdWinnerProfile"
-        android:layout_width="59dp"
-        android:layout_height="53dp"
+        android:layout_width="79dp"
+        android:layout_height="79dp"
         android:background="@drawable/img_circle"
         android:contentDescription="@string/third_position"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/SecondWinnerProfile"
         app:layout_constraintTop_toTopOf="@+id/SecondWinnerProfile"
-        tools:ignore="NotSibling"></ImageView>
+        tools:ignore="NotSibling" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/cardview_shadow_end_color"
-        android:fontFamily="@font/play_regular"
-        android:onClick="seeAllClassification"
-        android:text="@string/whole_classification"
-        android:textAlignment="center"
-        android:textColor="@color/green_vibrant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewRanking">
-
-    </Button>
 
     <EditText
         android:id="@+id/textEditTop2"
@@ -137,12 +117,12 @@
         android:textColor="@color/green_vibrant"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewRanking"
+        app:layout_constraintBottom_toTopOf="@+id/layoutRanking"
         app:layout_constraintEnd_toEndOf="@+id/SecondWinnerProfile"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/SecondWinnerProfile"
         app:layout_constraintTop_toBottomOf="@+id/SecondWinnerProfile"
-        tools:ignore="TouchTargetSizeCheck"></EditText>
+        tools:ignore="NotSibling,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/textEditTop3"
@@ -157,7 +137,7 @@
         app:layout_constraintEnd_toEndOf="@+id/ThirdWinnerProfile"
         app:layout_constraintStart_toStartOf="@+id/ThirdWinnerProfile"
         app:layout_constraintTop_toTopOf="@+id/textEditTop2"
-        tools:ignore="TouchTargetSizeCheck"></EditText>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/textEditTop1"
@@ -172,7 +152,7 @@
         app:layout_constraintEnd_toEndOf="@+id/FirstWinnerProfile"
         app:layout_constraintStart_toStartOf="@+id/FirstWinnerProfile"
         app:layout_constraintTop_toTopOf="@+id/textEditTop2"
-        tools:ignore="TouchTargetSizeCheck"></EditText>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textTop3"
@@ -189,14 +169,40 @@
         app:layout_constraintStart_toStartOf="@+id/ThirdWinnerProfile"
         app:layout_constraintTop_toBottomOf="@+id/titleRanking"></TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewRanking"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/layoutRanking"
+        tools:ignore="MissingConstraints,NotSibling"></TextView>
+
+    <ScrollView
+        android:id="@+id/scrollChat"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:layout_height="wrap_content"
+
+
+        android:background="@color/pastelGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEditTop2"></androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@+id/textEditTop3"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="25dp">
+
+        <TableLayout
+            android:id="@+id/layoutRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green_vibrant"
+                android:orientation="horizontal"></TableRow>
+        </TableLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

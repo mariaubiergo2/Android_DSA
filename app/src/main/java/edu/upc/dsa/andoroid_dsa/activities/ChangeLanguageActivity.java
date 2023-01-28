@@ -23,10 +23,10 @@ public class ChangeLanguageActivity extends AppCompatActivity {
     }
 
     public void changeSpanish(View view){
-        setLocale("es-rES");
+        setLocale("ES");
     }
     public void changeCatalan(View view){
-        setLocale("ca-rES");
+        setLocale("CAT");
     }
     public void changeEnglish(View view){
         setLocale("en");
@@ -39,7 +39,7 @@ public class ChangeLanguageActivity extends AppCompatActivity {
         configuration.locale = new Locale(language);
         resources.updateConfiguration(configuration, metrics);
         onConfigurationChanged(configuration);
-        Intent intentRegister = new Intent(ChangeLanguageActivity.this, ChangeLanguageActivity.class);
+        Intent intentRegister = new Intent(ChangeLanguageActivity.this, YourProfileActivity.class);
         this.startActivity(intentRegister);
     }
 

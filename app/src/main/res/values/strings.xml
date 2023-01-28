@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Andoroid_DSA</string>
+    <string name="app_name">Android_DSA</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -107,6 +107,11 @@
     <string name="birthday_profile">Birthday:</string>
     <string name="surname_profile">Surname:</string>
     <string name="game_view_content_description">Game view</string>
-    <string name="Gamer" />
+    <string name="Gamer">Gamer</string>
+    <string name="language">Language</string>
+    <string name="spanish">Spanish</string>
+    <string name="catalan">Catalan</string>
+    <string name="english">English</string>
+    <string name="return_btn">Return</string>
 
 </resources>

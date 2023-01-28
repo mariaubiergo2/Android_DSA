@@ -154,6 +154,11 @@ public class YourProfileActivity extends AppCompatActivity{
         this.saveUserIdAndName(this.idUser,this.username, this.email);
         this.startActivity(intent);
     }
+    public void changeLanguageOpen(View view){
+        Intent intent = new Intent(YourProfileActivity.this,ChangeLanguageActivity.class);
+        this.saveUserIdAndName(this.idUser,this.username, this.email);
+        startActivity(intent);
+    }
     public void openUpdateOfUser(View view){
         Intent intent=new Intent(YourProfileActivity.this, UpdateOfUserInformation.class);
         this.saveUserIdAndName(this.idUser,this.username,this.email);

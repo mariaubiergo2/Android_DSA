@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'edu.upc.dsa.andoroid_dsa'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "edu.upc.dsa.andoroid_dsa"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -56,4 +56,5 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-messaging:21.0.1'   //java
     implementation 'com.google.firebase:firebase-analytics'
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
 }

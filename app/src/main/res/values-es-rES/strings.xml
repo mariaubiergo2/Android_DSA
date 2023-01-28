@@ -105,4 +105,7 @@
     <string name="password_myprofile">Contraseña:</string>
     <string name="email_profile">Email:</string>
     <string name="birthday_profile">Cumpleaños:</string>
-    <string name="surname_profile">Apellido:</string></resources>
+    <string name="surname_profile">Apellido:</string>
+    <string name="game_view_content_description">Game view</string>
+
+</resources>

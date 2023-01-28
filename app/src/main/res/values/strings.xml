@@ -106,4 +106,6 @@
     <string name="email_profile">Email:</string>
     <string name="birthday_profile">Birthday:</string>
     <string name="surname_profile">Surname:</string>
+    <string name="game_view_content_description">Game view</string>
+
 </resources>

@@ -25,6 +25,9 @@ allprojects {
         google()  // Google's Maven repository
 
         mavenCentral()  // Maven Central repository
-
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
     }
 }

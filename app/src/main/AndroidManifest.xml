@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Andoroid_DSA"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:extractNativeLibs="true"
+        tools:replace="android:icon">
         <activity
             android:name=".activities.PrincipalActivity"
             android:exported="true"

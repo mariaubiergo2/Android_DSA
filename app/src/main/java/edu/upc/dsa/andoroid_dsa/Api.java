@@ -9,6 +9,8 @@ import edu.upc.dsa.andoroid_dsa.models.ChatMessage;
 import edu.upc.dsa.andoroid_dsa.models.Credentials;
 import edu.upc.dsa.andoroid_dsa.models.FAQ;
 import edu.upc.dsa.andoroid_dsa.models.Gadget;
+import edu.upc.dsa.andoroid_dsa.models.GadgetName;
+import edu.upc.dsa.andoroid_dsa.models.GameInfo;
 import edu.upc.dsa.andoroid_dsa.models.PasswordChangeRequirements;
 import edu.upc.dsa.andoroid_dsa.models.ProfilePicture;
 import edu.upc.dsa.andoroid_dsa.models.Purchase;
@@ -72,4 +74,10 @@ public interface Api {
 
     @PUT("shop/user/update/profilePicture")
     Call<Void> updateProfilePicture(@Body ProfilePicture profilePicture);
+
+    @POST("shop/user/saveGame")
+    Call<Void> saveGame(@Body GameInfo gameInfo);
+
+    @GET("shop/user/loadGame/{idUser}")
+    Call<List<GadgetName>> loadGame(@Path("idUser") String idUser);
 }

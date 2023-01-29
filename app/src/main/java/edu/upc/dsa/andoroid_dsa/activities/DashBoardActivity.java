@@ -81,7 +81,10 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(i);
                 break;
             case R.id.gameCard:
-                i=new Intent(this, UnityPlayerActivity.class);
+                i=new Intent(this, GameActivity.class);
+                Bundle adapterInfo = new Bundle();
+                adapterInfo.putString("idUser", this.userId);
+                i.putExtras(adapterInfo);
                 startActivity(i);
                 break;
         }

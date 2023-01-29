@@ -114,13 +114,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/birthdayTxt"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/green_vibrant"
         android:fontFamily="@font/play_regular"
         android:hint="@string/birthday"
+        android:inputType="date"
         android:textColor="@color/green_vibrant"
         android:textColorHint="@color/green_vibrant"
         app:layout_constraintBottom_toTopOf="@+id/emailTxt"

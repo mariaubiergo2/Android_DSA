@@ -42,6 +42,7 @@
         android:layout_marginTop="120dp"
         android:text="@string/questions"
         android:textAlignment="center"
+        android:fontFamily="@font/play_bold"
         android:textColor="@color/green_vibrant"
         android:textSize="44sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +52,7 @@
         android:id="@+id/subtitle"
         android:layout_width="311dp"
         android:layout_height="56dp"
+        android:fontFamily="@font/play_regular"
         android:layout_marginTop="190dp"
         android:text="@string/do_you_have_any_question_you_want_to_make"
         android:textAlignment="center"
@@ -64,6 +66,7 @@
         android:id="@+id/subtitle2"
         android:layout_width="311dp"
         android:layout_height="56dp"
+        android:fontFamily="@font/play_regular"
         android:layout_marginTop="316dp"
         android:text="@string/insert_the_title_of_the_message"
         android:textAlignment="center"
@@ -79,7 +82,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="180dp"
         android:hint="@string/write_a_title"
-
+        android:fontFamily="@font/play_regular"
         android:textColor="@color/green_vibrant"
         android:textColorHint="@color/green_vibrant"
 
@@ -91,6 +94,7 @@
     <TextView
         android:id="@+id/subtitle3"
         android:layout_width="311dp"
+        android:fontFamily="@font/play_regular"
         android:layout_height="56dp"
         android:layout_marginTop="432dp"
         android:text="@string/insert_the_message"
@@ -105,6 +109,7 @@
         android:id="@+id/messageInput"
         android:layout_width="250dp"
         android:layout_height="48dp"
+        android:fontFamily="@font/play_regular"
         android:layout_marginTop="296dp"
         android:hint="@string/write_a_message"
 

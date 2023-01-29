@@ -115,7 +115,7 @@ public class YourProfileActivity extends AppCompatActivity{
         editor_coins.setText(update_coins);
         this.profilePicture=findViewById(R.id.yourProfilePicture);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-            Picasso.get().load(this.urlPicture).resize(500,500)
+            Picasso.get().load(this.urlPicture).resize(600,600)
                     .transform(new CircleTransform())
                     .placeholder(R.drawable.castillo)
                     .memoryPolicy(MemoryPolicy.NO_CACHE )

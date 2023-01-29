@@ -76,14 +76,14 @@ public class RankingActivity extends AppCompatActivity implements RecycleClickVi
         secondWinnerEdit=(EditText) findViewById(R.id.textEditTop2);
         thirdWinnerEdit=(EditText) findViewById(R.id.textEditTop3);
 
-        Picasso.get().load(this.rankingOfUsers.get(0).getProfilePicture()).resize(500,500)
+        Picasso.get().load(this.rankingOfUsers.get(1).getProfilePicture()).resize(500,500)
                 .transform(new CircleTransform())
                 .placeholder(R.drawable.castillo)
                 .memoryPolicy(MemoryPolicy.NO_CACHE )
                 .networkPolicy(NetworkPolicy.NO_CACHE)
                 .error(R.drawable.castillo).into(firstWinner);
 
-        Picasso.get().load(this.rankingOfUsers.get(1).getProfilePicture()).resize(500,500)
+        Picasso.get().load(this.rankingOfUsers.get(0).getProfilePicture()).resize(500,500)
                 .transform(new CircleTransform())
                 .placeholder(R.drawable.castillo)
                 .memoryPolicy(MemoryPolicy.NO_CACHE )
@@ -98,10 +98,10 @@ public class RankingActivity extends AppCompatActivity implements RecycleClickVi
                 .error(R.drawable.castillo).into(thirdWinner);
 
         String updateTop1 =getString(R.string.updating_top1);
-        updateTop1 =this.rankingOfUsers.get(0).getName();
+        updateTop1 =this.rankingOfUsers.get(1).getName();
         firstWinnerEdit.setText(updateTop1);
         String updateTop2 =getString(R.string.updating_top2);
-        updateTop2 =this.rankingOfUsers.get(1).getName();
+        updateTop2 =this.rankingOfUsers.get(0).getName();
         secondWinnerEdit.setText(updateTop2);
         String updateTop3 =getString(R.string.updating_top3);
         updateTop3 =this.rankingOfUsers.get(2).getName();
@@ -130,7 +130,7 @@ public class RankingActivity extends AppCompatActivity implements RecycleClickVi
 
             playerUsername.setText(user.getName());
             userExperience.setText(String.valueOf(user.getExperience()));
-            Picasso.get().load(user.getProfilePicture()).fit()
+            Picasso.get().load(user.getProfilePicture()).resize(25,25)
                     .transform(new CircleTransform())
                     .placeholder(R.drawable.castillo)
                     .memoryPolicy(MemoryPolicy.NO_CACHE )

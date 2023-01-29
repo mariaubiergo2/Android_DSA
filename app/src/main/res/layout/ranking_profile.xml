@@ -42,11 +42,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textTop1"
+        android:id="@+id/textTop2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/play_regular"
-        android:text="@string/top_1"
+        android:text="@string/top_2"
         android:textColor="@color/green_vibrant"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -68,11 +68,11 @@
         tools:ignore="NotSibling" />
 
     <TextView
-        android:id="@+id/textTop2"
+        android:id="@+id/textTop1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/play_regular"
-        android:text="@string/top_2"
+        android:text="@string/top_1"
 
         android:textColor="@color/green_vibrant"
         android:textSize="20sp"

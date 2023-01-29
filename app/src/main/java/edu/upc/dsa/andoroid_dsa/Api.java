@@ -70,6 +70,6 @@ public interface Api {
     @POST("shop/user/question")
     Call<Void> addQuestion(@Body Question question);
 
-    @PUT("shop/user/updateProfilePicture")
+    @PUT("shop/user/update/profilePicture")
     Call<Void> updateProfilePicture(@Body ProfilePicture profilePicture);
 }

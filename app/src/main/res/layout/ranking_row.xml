@@ -8,7 +8,7 @@
         android:id="@+id/userImage"
         android:layout_width="15dp"
         android:layout_height="40dp"
-        android:layout_weight="0.05"
+        android:layout_weight="0.08"
         android:layout_gravity="center">
 
     </ImageView>
@@ -18,8 +18,9 @@
         android:id="@+id/userGamers"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="0.1"
+        android:layout_weight="0.15"
         android:layout_gravity="center"
+        android:textAlignment="center"
         android:text="@string/Gamer"
         android:textColor="@color/black"
         android:textStyle="bold|italic" />

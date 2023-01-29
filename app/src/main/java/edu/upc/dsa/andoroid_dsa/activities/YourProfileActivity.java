@@ -201,9 +201,10 @@ public class YourProfileActivity extends AppCompatActivity{
     public void updateProfilePicture(){
         String urlUpdated=this.updatedPicture.toString();
         APIservice = RetrofitClient.getInstance().getMyApi();
-        ProfilePicture updatedPicture=new ProfilePicture(this.idUser,urlUpdated);
-        Call<Void> call = APIservice.updateProfilePicture(updatedPicture);
-        call.enqueue(new Callback<Void>() {
+        ProfilePicture updatedPicture=new ProfilePicture();
+        updatedPicture= new ProfilePicture(this.idUser,urlUpdated);
+        Call<Void> call2 = APIservice.updateProfilePicture(updatedPicture);
+        call2.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 switch (response.code()){

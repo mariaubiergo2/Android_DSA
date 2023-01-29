@@ -10,13 +10,20 @@ public class ProfilePicture {
         this.idUser=idUser;
         this.newProfilePicture=newProfilePicture;
     }
+
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
+    }
+
+    public void setNewProfilePicture(String newProfilePicture) {
+        this.newProfilePicture = newProfilePicture;
+    }
+
     public String getIdUser(){
         return this.idUser;
     }
-    public String getProfilePicture() {
+
+    public String getNewProfilePicture() {
         return newProfilePicture;
-    }
-    public void setProfilePicture(String newProfilePicture) {
-        this.newProfilePicture = newProfilePicture;
     }
 }

@@ -1,5 +1,6 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
@@ -37,5 +38,12 @@ public class GameActivity extends UnityPlayerActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mUnityPlayer.configurationChanged(newConfig);
+    }
+
+    public void finishActivity()
+    {
+        Intent intent=new Intent(UnityPlayer.currentActivity, DashBoardActivity.class);
+        UnityPlayer.currentActivity.startActivity(intent);
+        UnityPlayer.currentActivity.finish();
     }
 }

@@ -20,6 +20,8 @@ public class User {
 
     private String profilePicture;
 
+    private Boolean admin;
+
 
     public User(){}
 
@@ -95,5 +97,13 @@ public class User {
     }
     public void setProfilePicture(String profilePicture){
         this.profilePicture=profilePicture;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 }

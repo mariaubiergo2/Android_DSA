@@ -1,10 +1,13 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
+import static com.google.firebase.messaging.Constants.MessageNotificationKeys.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -13,7 +16,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.unity3d.player.UnityPlayerActivity;
 
 import java.io.IOException;
@@ -102,6 +108,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                         updateLabel(userInformation);
                         saveVariables(userInformation);
                         saveUserId(userId);
+                        if(userInformation.getAdmin())
+                            subscribeToFirebase();
                         Toast.makeText(DashBoardActivity.this,"Correctly received UserInformation", Toast.LENGTH_SHORT).show();
                         break;
                     case 409:
@@ -176,5 +184,20 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         editor.putString("username", this.username);
         Log.i("SAVING: ",this.username);
         editor.apply();
+    }
+
+    public void subscribeToFirebase() {
+        FirebaseMessaging.getInstance().subscribeToTopic("admin")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Subscribed as ADMIN";
+                        if (!task.isSuccessful()) {
+                            msg = "Subscribe failed";
+                        }
+                        Log.d(TAG, msg);
+                        Toast.makeText(DashBoardActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

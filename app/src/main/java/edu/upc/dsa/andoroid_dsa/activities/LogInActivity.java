@@ -1,9 +1,12 @@
 package edu.upc.dsa.andoroid_dsa.activities;
 
+import static com.google.firebase.messaging.Constants.MessageNotificationKeys.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.telecom.CallRedirectionService;
 import android.util.Log;
 import android.view.View;
@@ -13,8 +16,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.io.IOException;
 
@@ -46,7 +52,7 @@ public class LogInActivity extends AppCompatActivity {
         setContentView(R.layout.login_main);
         emailTEXTE = findViewById(R.id.correuText);
         passwordTxt = findViewById(R.id.passwordTxt);
-
+        unsubscribeFromFirebase();
         Toast.makeText(this,"Please Sign In.", Toast.LENGTH_SHORT).show();
     }
     public void saveData() {
@@ -119,5 +125,18 @@ public class LogInActivity extends AppCompatActivity {
         Intent intentRegister = new Intent(LogInActivity.this, RegisterActivity.class);
         LogInActivity.this.startActivity(intentRegister);
 
+    }
+    public void unsubscribeFromFirebase() {
+        FirebaseMessaging.getInstance().unsubscribeFromTopic("admin")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "";
+                        if (!task.isSuccessful()) {
+                            msg = "Unsubscribe failed";
+                        }
+                        Log.d(TAG, msg);
+                    }
+                });
     }
 }

@@ -9,10 +9,11 @@ public class UserInformation {
     int coins;
     int experience;
     String profilePicture;
+    Boolean admin;
 
     public UserInformation(){};
 
-    public UserInformation(String name, String surname, String birthday, String email, String password,int coins, int experience, String profilePicture){
+    public UserInformation(String name, String surname, String birthday, String email, String password,int coins, int experience, String profilePicture, Boolean admin){
         this.setName(name);
         this.setSurname(surname);
         this.setBirthday(birthday);
@@ -21,7 +22,7 @@ public class UserInformation {
         this.setCoins(coins);
         this.setExperience(experience);
         this.setProfilePicture(profilePicture);
-
+        this.setAdmin(admin);
     }
 
 
@@ -35,6 +36,7 @@ public class UserInformation {
         this.setCoins(u.getCoins());
         this.setExperience(u.getExperience());
         this.setProfilePicture(u.getProfilePicture());
+        this.setAdmin(u.getAdmin());
     }
 
 
@@ -97,5 +99,13 @@ public class UserInformation {
     }
     public String getProfilePicture(){
         return this.profilePicture;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 }
